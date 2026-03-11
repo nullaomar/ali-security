@@ -2,9 +2,10 @@ import Link from "next/link";
 import type { CSSProperties } from "react";
 import ScrollReveal from "./components/scroll-reveal";
 import HeroSlideshow from "./components/hero-slideshow";
-import AnimatedWords from "./components/animated-words";
 import RotatingWords from "./components/rotating-words";
 import TestimonialCards from "./components/testimonial-cards";
+import AnimatedCounter from "./components/animated-counter";
+import ScrollJourney from "./components/scroll-journey";
 import { services } from "./lib/services-data";
 
 const tickerItems = [
@@ -39,14 +40,14 @@ function revealDelay(delayMs: number): CSSProperties {
 export default function Home() {
   return (
     <main className="min-h-screen bg-[var(--background)] text-[var(--foreground)]">
+      {/* Scroll journey indicator */}
+      <ScrollJourney />
+
       {/* ── Hero with Slideshow ── */}
-      <section className="glow-line relative overflow-hidden border-b">
-        {/* Background slideshow */}
+      <section className="glow-line relative overflow-hidden section-divider-down" style={{ background: "var(--background)" }}>
         <HeroSlideshow />
 
-
-        {/* Content */}
-        <div className="relative z-10 mx-auto max-w-7xl px-5 pt-10 pb-14 md:pt-14 md:pb-20 lg:px-8">
+        <div className="relative z-10 mx-auto max-w-7xl px-5 pt-10 pb-20 md:pt-14 md:pb-28 lg:px-8">
           <div className="grid items-center gap-10 lg:grid-cols-[1.3fr_0.7fr]">
             <div>
               <div className="reveal-up mt-1" style={revealDelay(0)}>
@@ -99,7 +100,6 @@ export default function Home() {
               </div>
             </div>
 
-            {/* Testimonials */}
             <div className="hidden lg:block">
               <TestimonialCards />
             </div>
@@ -107,9 +107,21 @@ export default function Home() {
         </div>
       </section>
 
+      {/* ── Ticker Strip ── */}
+      <div className="ticker-strip bg-[#8b6914] py-3 relative z-10">
+        <div className="ticker-strip-track">
+          {[...tickerItems, ...tickerItems].map((item, idx) => (
+            <span key={idx} className="inline-flex items-center gap-4 px-6 text-[12px] font-bold uppercase tracking-[0.2em] text-white/90">
+              {item}
+              <span className="inline-block h-1 w-1 rounded-full bg-white/40" />
+            </span>
+          ))}
+        </div>
+      </div>
+
       {/* ── Services preview ── */}
-      <section className="border-b bg-[#0f1b2d]">
-        <div className="mx-auto max-w-7xl px-5 py-14 lg:px-8">
+      <section className="bg-[#0f1b2d] pt-16 pb-14 section-divider-down" style={{ background: "#0f1b2d" }}>
+        <div className="mx-auto max-w-7xl px-5 lg:px-8">
           <ScrollReveal delayMs={80}>
             <div className="mb-8 flex flex-wrap items-end justify-between gap-4">
               <div className="max-w-2xl">
@@ -132,7 +144,6 @@ export default function Home() {
             </div>
           </ScrollReveal>
 
-          {/* Row 1: 4 even cards */}
           <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
             {services.slice(0, 4).map((service, idx) => (
               <ScrollReveal key={service.slug} delayMs={100 + idx * 120} variant="scale">
@@ -159,7 +170,6 @@ export default function Home() {
             ))}
           </div>
 
-          {/* Row 2: 3 even cards */}
           <div className="mt-4 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
             {services.slice(4).map((service, idx) => (
               <ScrollReveal key={service.slug} delayMs={200 + idx * 120} variant="scale">
@@ -188,16 +198,34 @@ export default function Home() {
         </div>
       </section>
 
+      {/* ── Stats Counter Strip ── */}
+      <section className="bg-[#0a1220] py-14 relative z-10">
+        <div className="mx-auto max-w-5xl px-5 lg:px-8">
+          <div className="grid grid-cols-2 gap-8 md:grid-cols-4">
+            {stats.map((stat, idx) => (
+              <AnimatedCounter
+                key={stat.label}
+                value={stat.value}
+                label={stat.label}
+                sub={stat.sub}
+                delayMs={idx * 150}
+              />
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* ── About preview ── */}
-      <section className="border-b bg-[var(--background)]">
-        <div className="mx-auto max-w-7xl px-5 py-20 lg:px-8">
+      <section className="bg-[var(--background)] py-20">
+        <div className="mx-auto max-w-7xl px-5 lg:px-8">
           <div className="grid items-center gap-12 lg:grid-cols-2">
             <ScrollReveal delayMs={80} variant="left">
               <div>
-                <p className="inline-flex items-center gap-2 rounded-full border border-[var(--blue)]/15 bg-[var(--blue-soft)] px-3.5 py-1 text-[11px] font-semibold uppercase tracking-[0.14em] text-[var(--blue)]">
+                <p className="text-[15px] font-bold uppercase tracking-[0.18em] text-[#8b6914]">
                   About Capra Security
                 </p>
-                <h2 className="mt-5 text-3xl font-semibold text-[var(--text-primary)] md:text-4xl">
+                <div className="mt-2 h-[2px] w-16 bg-[#0f1b2d]" />
+                <h2 className="mt-5 text-3xl font-semibold text-[#0f1b2d] md:text-4xl">
                   A Trusted Partner in Protection
                 </h2>
                 <p className="mt-4 text-base leading-relaxed text-[var(--text-secondary)]">
@@ -207,7 +235,7 @@ export default function Home() {
                 </p>
                 <Link
                   href="/about"
-                  className="btn-arrow mt-6 inline-flex items-center gap-2 text-sm font-semibold text-[var(--blue)] transition hover:gap-3"
+                  className="btn-arrow mt-6 inline-flex items-center gap-2 text-sm font-semibold text-[#8b6914] transition hover:gap-3"
                 >
                   Learn more about us
                   <svg viewBox="0 0 20 20" className="h-4 w-4" fill="currentColor">
@@ -224,8 +252,8 @@ export default function Home() {
                   { title: "Innovation", desc: "Leveraging modern technology for smarter, more efficient security operations." },
                   { title: "Personalization", desc: "Every client receives a tailored security solution designed for their unique needs." },
                 ].map((v) => (
-                  <article key={v.title} className="value-card rounded-2xl border border-[var(--border)] bg-white p-5 transition-all duration-500 hover:-translate-y-1 hover:shadow-lg hover:border-[#8b6914]/20">
-                    <h3 className="text-sm font-semibold text-[var(--text-primary)]">{v.title}</h3>
+                  <article key={v.title} className="rounded-2xl border border-[#0f1b2d]/10 bg-white p-5 transition-all duration-500 hover:-translate-y-1 hover:shadow-lg hover:border-[#8b6914]/30">
+                    <h3 className="text-sm font-semibold text-[#0f1b2d]">{v.title}</h3>
                     <p className="mt-2 text-[13px] leading-relaxed text-[var(--text-tertiary)]">{v.desc}</p>
                   </article>
                 ))}
@@ -236,53 +264,69 @@ export default function Home() {
       </section>
 
       {/* ── Process ── */}
-      <section className="border-b bg-white">
-        <div className="mx-auto max-w-7xl px-5 py-20 lg:px-8">
+      <section className="bg-white section-divider-up" style={{ background: "white" }}>
+        <div className="mx-auto max-w-7xl px-5 pt-24 pb-20 lg:px-8">
           <ScrollReveal delayMs={80} variant="fade">
             <div className="mb-12 max-w-2xl">
-              <p className="inline-flex items-center gap-2 rounded-full border border-[var(--blue)]/15 bg-[var(--blue-soft)] px-3.5 py-1 text-[11px] font-semibold uppercase tracking-[0.14em] text-[var(--blue)]">
+              <p className="text-[15px] font-bold uppercase tracking-[0.18em] text-[#8b6914]">
                 How It Works
               </p>
-              <h2 className="mt-5 text-3xl font-semibold text-[var(--text-primary)] md:text-4xl">
+              <div className="mt-2 h-[2px] w-16 bg-[#0f1b2d]" />
+              <h2 className="mt-5 text-3xl font-semibold text-[#0f1b2d] md:text-4xl">
                 From Assessment to Deployment
               </h2>
             </div>
           </ScrollReveal>
-          <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-4">
-            {process.map((p, idx) => (
-              <ScrollReveal key={p.step} delayMs={100 + idx * 120} variant="scale">
-                <article className="process-card relative rounded-2xl border border-[var(--border)] bg-[var(--surface)] p-6 transition-all duration-500 hover:-translate-y-2 hover:shadow-xl hover:border-[#8b6914]/20">
-                  <span className="text-[11px] font-bold uppercase tracking-[0.2em] text-[#8b6914]">Step {p.step}</span>
-                  <h3 className="mt-3 text-lg font-semibold text-[var(--text-primary)]">{p.title}</h3>
-                  <p className="mt-2 text-[13px] leading-relaxed text-[var(--text-tertiary)]">{p.description}</p>
-                </article>
-              </ScrollReveal>
-            ))}
+
+          {/* Timeline-style process */}
+          <div className="relative">
+            {/* Connecting line */}
+            <div className="absolute left-4 top-0 bottom-0 hidden w-[2px] bg-gradient-to-b from-[#8b6914]/40 via-[#0f1b2d]/20 to-transparent lg:block" />
+
+            <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-4">
+              {process.map((p, idx) => (
+                <ScrollReveal key={p.step} delayMs={100 + idx * 150} variant={idx % 2 === 0 ? "left" : "right"}>
+                  <article className="relative rounded-2xl border border-[#0f1b2d]/10 bg-white p-6 transition-all duration-500 hover:-translate-y-2 hover:shadow-xl hover:border-[#8b6914]/30">
+                    <span className="inline-flex h-10 w-10 items-center justify-center rounded-full bg-[#0f1b2d] text-[13px] font-bold text-[#8b6914]">{p.step}</span>
+                    <h3 className="mt-3 text-lg font-semibold text-[#0f1b2d]">{p.title}</h3>
+                    <p className="mt-2 text-[13px] leading-relaxed text-[var(--text-tertiary)]">{p.description}</p>
+                    {idx < process.length - 1 && (
+                      <div className="absolute -right-3 top-1/2 hidden h-[2px] w-6 bg-[#8b6914]/30 lg:block" />
+                    )}
+                  </article>
+                </ScrollReveal>
+              ))}
+            </div>
           </div>
         </div>
       </section>
 
       {/* ── CTA ── */}
-      <section className="bg-[var(--accent)] overflow-hidden">
-        <div className="mx-auto max-w-7xl px-5 py-16 text-center lg:px-8">
+      <section className="bg-[#0f1b2d] overflow-hidden relative">
+        {/* Decorative radial glow */}
+        <div className="absolute inset-0 pointer-events-none">
+          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 h-[500px] w-[500px] rounded-full bg-[#8b6914]/[0.04]" />
+        </div>
+
+        <div className="relative mx-auto max-w-7xl px-5 py-20 text-center lg:px-8">
           <ScrollReveal delayMs={0} variant="scale">
             <h2 className="text-3xl font-semibold text-white md:text-4xl">Ready to Secure Your Operation?</h2>
           </ScrollReveal>
           <ScrollReveal delayMs={150} variant="fade">
-            <p className="mx-auto mt-4 max-w-2xl text-base leading-relaxed text-white/60">
+            <p className="mx-auto mt-4 max-w-2xl text-base leading-relaxed text-white/50">
               Whether you need a single fire watch guard or a full-scale security operation, Capra Security
               has the experience, personnel, and infrastructure to protect what matters most.
             </p>
           </ScrollReveal>
           <ScrollReveal delayMs={300} variant="up">
             <div className="mt-9 flex flex-wrap justify-center gap-3">
-              <Link href="/quote" className="cta-btn rounded-xl bg-white px-7 py-3.5 text-sm font-semibold text-[var(--accent)] shadow-lg transition-all duration-400 hover:-translate-y-1 hover:bg-gray-50 hover:shadow-2xl">
+              <Link href="/quote" className="rounded-xl bg-[#8b6914] px-7 py-3.5 text-sm font-semibold text-white shadow-lg transition-all duration-400 hover:-translate-y-1 hover:bg-[#a07a1a] hover:shadow-[0_8px_30px_rgba(139,105,20,0.3)]">
                 Request a Quote
               </Link>
-              <a href="tel:5199925412" className="cta-btn rounded-xl border border-white/20 px-7 py-3.5 text-sm font-semibold text-white transition-all duration-400 hover:-translate-y-1 hover:bg-white/10 hover:border-white/40">
+              <a href="tel:5199925412" className="rounded-xl border border-white/15 px-7 py-3.5 text-sm font-semibold text-white transition-all duration-400 hover:-translate-y-1 hover:bg-white/5 hover:border-[#8b6914]/40">
                 Call 519-992-5412
               </a>
-              <Link href="/contact" className="cta-btn rounded-xl border border-white/20 px-7 py-3.5 text-sm font-semibold text-white transition-all duration-400 hover:-translate-y-1 hover:bg-white/10 hover:border-white/40">
+              <Link href="/contact" className="rounded-xl border border-white/15 px-7 py-3.5 text-sm font-semibold text-white transition-all duration-400 hover:-translate-y-1 hover:bg-white/5 hover:border-[#8b6914]/40">
                 Contact Us
               </Link>
             </div>

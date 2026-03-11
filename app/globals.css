@@ -259,6 +259,59 @@ h1, h2, h3 {
   background-size: 48px 48px;
 }
 
+/* ── Section divider angles ── */
+.section-divider-down {
+  position: relative;
+}
+
+.section-divider-down::after {
+  content: "";
+  position: absolute;
+  bottom: -1px;
+  left: 0;
+  right: 0;
+  height: 60px;
+  background: inherit;
+  clip-path: polygon(0 0, 100% 60%, 100% 100%, 0 100%);
+  z-index: 2;
+}
+
+.section-divider-up {
+  position: relative;
+}
+
+.section-divider-up::before {
+  content: "";
+  position: absolute;
+  top: -1px;
+  left: 0;
+  right: 0;
+  height: 60px;
+  background: inherit;
+  clip-path: polygon(0 0, 100% 0, 100% 40%, 0 100%);
+  z-index: 2;
+}
+
+/* ── Ticker strip ── */
+@keyframes ticker-scroll {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+.ticker-strip {
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+.ticker-strip-track {
+  display: inline-flex;
+  animation: ticker-scroll 25s linear infinite;
+}
+
+.ticker-strip-track:hover {
+  animation-play-state: paused;
+}
+
 /* ── Glow line for hero ── */
 @keyframes glow-sweep {
   0% { transform: translateX(-100%); opacity: 0; }
