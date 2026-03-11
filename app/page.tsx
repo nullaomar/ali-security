@@ -8,17 +8,6 @@ import AnimatedCounter from "./components/animated-counter";
 import ScrollJourney from "./components/scroll-journey";
 import { services } from "./lib/services-data";
 
-const tickerItems = [
-  "FIRE WATCH",
-  "LOSS PREVENTION",
-  "EVENT SECURITY",
-  "MOBILE PATROL",
-  "INDUSTRIAL SECURITY",
-  "CONSTRUCTION SITES",
-  "24/7 NATIONWIDE",
-  "LICENSED & INSURED",
-];
-
 const stats = [
   { value: "24/7", label: "Operations Centre", sub: "Always active" },
   { value: "2020", label: "Year Founded", sub: "Growing nationwide" },
@@ -106,18 +95,6 @@ export default function Home() {
           </div>
         </div>
       </section>
-
-      {/* ── Ticker Strip ── */}
-      <div className="ticker-strip bg-[#8b6914] py-3 relative z-10">
-        <div className="ticker-strip-track">
-          {[...tickerItems, ...tickerItems].map((item, idx) => (
-            <span key={idx} className="inline-flex items-center gap-4 px-6 text-[12px] font-bold uppercase tracking-[0.2em] text-white/90">
-              {item}
-              <span className="inline-block h-1 w-1 rounded-full bg-white/40" />
-            </span>
-          ))}
-        </div>
-      </div>
 
       {/* ── Services preview ── */}
       <section className="bg-[#0f1b2d] pt-16 pb-14 section-divider-down" style={{ background: "#0f1b2d" }}>
