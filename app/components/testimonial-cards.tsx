@@ -56,7 +56,6 @@ export default function TestimonialCards() {
             style={{
               animation: "testimonial-progress 5.5s linear",
               animationIterationCount: 1,
-              key: active,
             }}
             key={active}
           />
