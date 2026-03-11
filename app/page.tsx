@@ -63,7 +63,7 @@ export default function Home() {
                     "Safety You Can Count On.",
                     "Defense You Can Rely On.",
                   ]}
-                  interval={5000}
+                  interval={3500}
                   className="text-shimmer"
                 />
               </h1>
