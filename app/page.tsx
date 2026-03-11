@@ -1,65 +1,305 @@
-import Image from "next/image";
+import Link from "next/link";
+import type { CSSProperties } from "react";
+import ScrollReveal from "./components/scroll-reveal";
+import HeroSlideshow from "./components/hero-slideshow";
+import AnimatedWords from "./components/animated-words";
+import RotatingWords from "./components/rotating-words";
+import TestimonialCards from "./components/testimonial-cards";
+import { services } from "./lib/services-data";
+
+const tickerItems = [
+  "FIRE WATCH",
+  "LOSS PREVENTION",
+  "EVENT SECURITY",
+  "MOBILE PATROL",
+  "INDUSTRIAL SECURITY",
+  "CONSTRUCTION SITES",
+  "24/7 NATIONWIDE",
+  "LICENSED & INSURED",
+];
+
+const stats = [
+  { value: "24/7", label: "Operations Centre", sub: "Always active" },
+  { value: "2020", label: "Year Founded", sub: "Growing nationwide" },
+  { value: "7+", label: "Service Categories", sub: "Full-spectrum coverage" },
+  { value: "100%", label: "Licensed & Insured", sub: "Complete compliance" },
+];
+
+const process = [
+  { step: "01", title: "Assessment", description: "We conduct a thorough on-site or virtual evaluation of your property, risks, and operational requirements." },
+  { step: "02", title: "Custom Solution", description: "Our team designs a tailored security plan with the right personnel, technology, protocols, and reporting structure." },
+  { step: "03", title: "Deployment", description: "Vetted, trained guards are deployed with GPS tracking, real-time reporting, and 24/7 dispatch support." },
+  { step: "04", title: "Ongoing Support", description: "Regular performance reviews, incident analysis, and plan adjustments ensure your security stays ahead of emerging threats." },
+];
+
+function revealDelay(delayMs: number): CSSProperties {
+  return { "--reveal-delay": `${delayMs}ms` } as CSSProperties;
+}
 
 export default function Home() {
   return (
-    <div className="flex min-h-screen items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex min-h-screen w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the page.tsx file.
-          </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
-          </p>
+    <main className="min-h-screen bg-[var(--background)] text-[var(--foreground)]">
+      {/* ── Hero with Slideshow ── */}
+      <section className="glow-line relative overflow-hidden border-b">
+        {/* Background slideshow */}
+        <HeroSlideshow />
+
+        {/* Grid overlay */}
+        <div className="hero-grid absolute inset-0 pointer-events-none" />
+
+        {/* Content */}
+        <div className="relative z-10 mx-auto max-w-7xl px-5 pt-10 pb-14 md:pt-14 md:pb-20 lg:px-8">
+          <div className="grid items-center gap-10 lg:grid-cols-[1.3fr_0.7fr]">
+            <div>
+              <div className="reveal-up mt-1" style={revealDelay(150)}>
+                <p className="text-[15px] font-bold uppercase tracking-[0.18em] text-[#0f1b2d]">
+                  Welcome to Capra
+                </p>
+                <div className="mt-2 h-[2px] w-16 bg-[#8b6914]" />
+              </div>
+
+              <h1 className="reveal-up mt-4 max-w-2xl text-[clamp(2rem,4.5vw,3.5rem)] font-semibold leading-none" style={revealDelay(200)}>
+                <span className="text-[var(--text-primary)]">
+                  <RotatingWords
+                    words={["Security", "Protection", "Safety", "Defense"]}
+                    interval={3000}
+                    className="text-shimmer"
+                  />{" "}
+                  You Can Trust.
+                </span>
+                <br />
+                <span className="text-shimmer">
+                  Service You&apos;ll Remember.
+                </span>
+              </h1>
+
+              <p
+                className="reveal-up mt-5 max-w-xl text-[15px] font-medium leading-relaxed text-[#111111]"
+                style={revealDelay(800)}
+              >
+                Since 2020, Capra Security has built a nationwide network of vetted security professionals across Canada. We deliver tailored protection for corporate, retail, industrial, and event operations.
+              </p>
+
+              <div className="mt-8 flex flex-wrap gap-3">
+                <Link
+                  href="/quote"
+                  className="hero-btn hero-btn-red reveal-up inline-flex items-center gap-2 rounded-xl bg-[#0f1b2d] px-6 py-3 text-sm font-semibold text-white shadow-lg"
+                  style={revealDelay(1000)}
+                >
+                  Get a Quote
+                  <svg viewBox="0 0 20 20" className="hero-btn-arrow h-4 w-4" fill="currentColor">
+                    <path fillRule="evenodd" d="M3 10a.75.75 0 01.75-.75h10.638L10.23 5.29a.75.75 0 111.04-1.08l5.5 5.25a.75.75 0 010 1.08l-5.5 5.25a.75.75 0 11-1.04-1.08l4.158-3.96H3.75A.75.75 0 013 10z" clipRule="evenodd" />
+                  </svg>
+                </Link>
+                <Link
+                  href="/services"
+                  className="hero-btn hero-btn-white reveal-up inline-flex items-center gap-2 rounded-xl bg-white px-6 py-3 text-sm font-semibold text-[#0f1b2d] shadow-lg"
+                  style={revealDelay(1100)}
+                >
+                  View Services
+                  <svg viewBox="0 0 20 20" className="hero-btn-arrow h-4 w-4" fill="currentColor">
+                    <path fillRule="evenodd" d="M3 10a.75.75 0 01.75-.75h10.638L10.23 5.29a.75.75 0 111.04-1.08l5.5 5.25a.75.75 0 010 1.08l-5.5 5.25a.75.75 0 11-1.04-1.08l4.158-3.96H3.75A.75.75 0 013 10z" clipRule="evenodd" />
+                  </svg>
+                </Link>
+                <Link
+                  href="/apply"
+                  className="hero-btn hero-btn-white reveal-up inline-flex items-center gap-2 rounded-xl bg-[#e8e8e8] px-6 py-3 text-sm font-semibold text-[#0f1b2d] shadow-lg"
+                  style={revealDelay(1200)}
+                >
+                  Apply to Work
+                  <svg viewBox="0 0 20 20" className="hero-btn-arrow h-4 w-4" fill="currentColor">
+                    <path fillRule="evenodd" d="M3 10a.75.75 0 01.75-.75h10.638L10.23 5.29a.75.75 0 111.04-1.08l5.5 5.25a.75.75 0 010 1.08l-5.5 5.25a.75.75 0 11-1.04-1.08l4.158-3.96H3.75A.75.75 0 013 10z" clipRule="evenodd" />
+                  </svg>
+                </Link>
+              </div>
+            </div>
+
+            {/* Testimonials */}
+            <div className="hidden lg:block">
+              <TestimonialCards />
+            </div>
+          </div>
         </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={16}
-            />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
+      </section>
+
+      {/* ── Services preview ── */}
+      <section className="border-b bg-[#0f1b2d]">
+        <div className="mx-auto max-w-7xl px-5 py-14 lg:px-8">
+          <ScrollReveal delayMs={80}>
+            <div className="mb-8 flex flex-wrap items-end justify-between gap-4">
+              <div className="max-w-2xl">
+                <div>
+                  <p className="text-[15px] font-bold uppercase tracking-[0.18em] text-[#8b6914]">
+                    Our Services
+                  </p>
+                  <div className="mt-2 h-[2px] w-16 bg-white/50" />
+                </div>
+                <h2 className="mt-4 text-2xl font-semibold md:text-3xl">
+                  <span className="services-text-shimmer">Full-Spectrum Security Solutions</span>
+                </h2>
+              </div>
+              <Link href="/services" className="btn-arrow inline-flex items-center gap-1.5 text-[13px] font-semibold text-white/70 transition hover:text-white">
+                View all services
+                <svg viewBox="0 0 20 20" className="h-4 w-4" fill="currentColor">
+                  <path fillRule="evenodd" d="M3 10a.75.75 0 01.75-.75h10.638L10.23 5.29a.75.75 0 111.04-1.08l5.5 5.25a.75.75 0 010 1.08l-5.5 5.25a.75.75 0 11-1.04-1.08l4.158-3.96H3.75A.75.75 0 013 10z" clipRule="evenodd" />
+                </svg>
+              </Link>
+            </div>
+          </ScrollReveal>
+
+          {/* Row 1: 4 even cards */}
+          <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+            {services.slice(0, 4).map((service, idx) => (
+              <ScrollReveal key={service.slug} delayMs={100 + idx * 60}>
+                <Link href={`/services/${service.slug}`} className="group block h-full">
+                  <article className="service-bento relative h-[200px] overflow-hidden rounded-2xl">
+                    {/* eslint-disable-next-line @next/next/no-img-element */}
+                    <img src={service.image} alt={service.title} className="absolute inset-0 h-full w-full object-cover blur-[0.8px] transition-all duration-700 group-hover:scale-110 group-hover:blur-0" />
+                    <div className="service-overlay absolute inset-0 bg-gradient-to-t from-black/85 via-black/50 to-black/20" />
+                    <div className="service-shine" />
+                    <div className="service-border-glow" />
+                    <div className="service-content relative flex h-full flex-col justify-end p-5">
+                      <h3 className="text-base font-bold text-white transition-transform duration-300 group-hover:translate-x-1">{service.title}</h3>
+                      <p className="mt-1.5 text-[13px] font-medium leading-relaxed text-white/85 line-clamp-2 transition-opacity duration-300 group-hover:text-white">{service.shortDesc}</p>
+                      <span className="mt-2.5 inline-flex items-center gap-1 text-[12px] font-semibold text-white/70 transition-all duration-300 group-hover:gap-2.5 group-hover:text-[#8b6914]">
+                        Learn more
+                        <svg viewBox="0 0 20 20" className="h-3 w-3 transition-transform duration-300 group-hover:translate-x-1" fill="currentColor">
+                          <path fillRule="evenodd" d="M3 10a.75.75 0 01.75-.75h10.638L10.23 5.29a.75.75 0 111.04-1.08l5.5 5.25a.75.75 0 010 1.08l-5.5 5.25a.75.75 0 11-1.04-1.08l4.158-3.96H3.75A.75.75 0 013 10z" clipRule="evenodd" />
+                        </svg>
+                      </span>
+                    </div>
+                  </article>
+                </Link>
+              </ScrollReveal>
+            ))}
+          </div>
+
+          {/* Row 2: 3 even cards */}
+          <div className="mt-4 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+            {services.slice(4).map((service, idx) => (
+              <ScrollReveal key={service.slug} delayMs={280 + idx * 60}>
+                <Link href={`/services/${service.slug}`} className="group block h-full">
+                  <article className="service-bento relative h-[200px] overflow-hidden rounded-2xl">
+                    {/* eslint-disable-next-line @next/next/no-img-element */}
+                    <img src={service.image} alt={service.title} className="absolute inset-0 h-full w-full object-cover blur-[0.8px] transition-all duration-700 group-hover:scale-110 group-hover:blur-0" />
+                    <div className="service-overlay absolute inset-0 bg-gradient-to-t from-black/85 via-black/50 to-black/20" />
+                    <div className="service-shine" />
+                    <div className="service-border-glow" />
+                    <div className="service-content relative flex h-full flex-col justify-end p-5">
+                      <h3 className="text-base font-bold text-white transition-transform duration-300 group-hover:translate-x-1">{service.title}</h3>
+                      <p className="mt-1.5 text-[13px] font-medium leading-relaxed text-white/85 line-clamp-2 transition-opacity duration-300 group-hover:text-white">{service.shortDesc}</p>
+                      <span className="mt-2.5 inline-flex items-center gap-1 text-[12px] font-semibold text-white/70 transition-all duration-300 group-hover:gap-2.5 group-hover:text-[#8b6914]">
+                        Learn more
+                        <svg viewBox="0 0 20 20" className="h-3 w-3 transition-transform duration-300 group-hover:translate-x-1" fill="currentColor">
+                          <path fillRule="evenodd" d="M3 10a.75.75 0 01.75-.75h10.638L10.23 5.29a.75.75 0 111.04-1.08l5.5 5.25a.75.75 0 010 1.08l-5.5 5.25a.75.75 0 11-1.04-1.08l4.158-3.96H3.75A.75.75 0 013 10z" clipRule="evenodd" />
+                        </svg>
+                      </span>
+                    </div>
+                  </article>
+                </Link>
+              </ScrollReveal>
+            ))}
+          </div>
         </div>
-      </main>
-    </div>
+      </section>
+
+      {/* ── About preview ── */}
+      <section className="border-b bg-[var(--background)]">
+        <div className="mx-auto max-w-7xl px-5 py-20 lg:px-8">
+          <div className="grid items-center gap-12 lg:grid-cols-2">
+            <ScrollReveal delayMs={80}>
+              <div>
+                <p className="inline-flex items-center gap-2 rounded-full border border-[var(--blue)]/15 bg-[var(--blue-soft)] px-3.5 py-1 text-[11px] font-semibold uppercase tracking-[0.14em] text-[var(--blue)]">
+                  About Capra Security
+                </p>
+                <h2 className="mt-5 text-3xl font-semibold text-[var(--text-primary)] md:text-4xl">
+                  A Trusted Partner in Protection
+                </h2>
+                <p className="mt-4 text-base leading-relaxed text-[var(--text-secondary)]">
+                  Established in 2020, Capra Security has built a nationwide network of highly vetted security
+                  professionals. We examine performance indicators through comprehensive vetting processes and
+                  deliver personalized recommendations for every client.
+                </p>
+                <Link
+                  href="/about"
+                  className="btn-arrow mt-6 inline-flex items-center gap-2 text-sm font-semibold text-[var(--blue)] transition hover:gap-3"
+                >
+                  Learn more about us
+                  <svg viewBox="0 0 20 20" className="h-4 w-4" fill="currentColor">
+                    <path fillRule="evenodd" d="M3 10a.75.75 0 01.75-.75h10.638L10.23 5.29a.75.75 0 111.04-1.08l5.5 5.25a.75.75 0 010 1.08l-5.5 5.25a.75.75 0 11-1.04-1.08l4.158-3.96H3.75A.75.75 0 013 10z" clipRule="evenodd" />
+                  </svg>
+                </Link>
+              </div>
+            </ScrollReveal>
+            <ScrollReveal delayMs={160}>
+              <div className="grid grid-cols-2 gap-3">
+                {[
+                  { title: "Integrity", desc: "Transparent operations with honest reporting and ethical conduct at every level." },
+                  { title: "Accountability", desc: "GPS tracking, shift logs, and real-time incident communication you can rely on." },
+                  { title: "Innovation", desc: "Leveraging modern technology for smarter, more efficient security operations." },
+                  { title: "Personalization", desc: "Every client receives a tailored security solution designed for their unique needs." },
+                ].map((v) => (
+                  <article key={v.title} className="rounded-2xl border border-[var(--border)] bg-white p-5">
+                    <h3 className="text-sm font-semibold text-[var(--text-primary)]">{v.title}</h3>
+                    <p className="mt-2 text-[13px] leading-relaxed text-[var(--text-tertiary)]">{v.desc}</p>
+                  </article>
+                ))}
+              </div>
+            </ScrollReveal>
+          </div>
+        </div>
+      </section>
+
+      {/* ── Process ── */}
+      <section className="border-b bg-white">
+        <div className="mx-auto max-w-7xl px-5 py-20 lg:px-8">
+          <ScrollReveal delayMs={80}>
+            <div className="mb-12 max-w-2xl">
+              <p className="inline-flex items-center gap-2 rounded-full border border-[var(--blue)]/15 bg-[var(--blue-soft)] px-3.5 py-1 text-[11px] font-semibold uppercase tracking-[0.14em] text-[var(--blue)]">
+                How It Works
+              </p>
+              <h2 className="mt-5 text-3xl font-semibold text-[var(--text-primary)] md:text-4xl">
+                From Assessment to Deployment
+              </h2>
+            </div>
+          </ScrollReveal>
+          <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-4">
+            {process.map((p, idx) => (
+              <ScrollReveal key={p.step} delayMs={120 + idx * 80}>
+                <article className="relative rounded-2xl border border-[var(--border)] bg-[var(--surface)] p-6">
+                  <span className="text-[11px] font-bold uppercase tracking-[0.2em] text-[var(--blue)]">Step {p.step}</span>
+                  <h3 className="mt-3 text-lg font-semibold text-[var(--text-primary)]">{p.title}</h3>
+                  <p className="mt-2 text-[13px] leading-relaxed text-[var(--text-tertiary)]">{p.description}</p>
+                </article>
+              </ScrollReveal>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ── CTA ── */}
+      <section className="bg-[var(--accent)]">
+        <div className="mx-auto max-w-7xl px-5 py-16 text-center lg:px-8">
+          <ScrollReveal delayMs={80}>
+            <h2 className="text-3xl font-semibold text-white md:text-4xl">Ready to Secure Your Operation?</h2>
+            <p className="mx-auto mt-4 max-w-2xl text-base leading-relaxed text-white/60">
+              Whether you need a single fire watch guard or a full-scale security operation, Capra Security
+              has the experience, personnel, and infrastructure to protect what matters most.
+            </p>
+            <div className="mt-9 flex flex-wrap justify-center gap-3">
+              <Link href="/quote" className="rounded-xl bg-white px-7 py-3.5 text-sm font-semibold text-[var(--accent)] shadow-lg transition-all hover:bg-gray-50 hover:shadow-xl">
+                Request a Quote
+              </Link>
+              <a href="tel:5199925412" className="rounded-xl border border-white/20 px-7 py-3.5 text-sm font-semibold text-white transition hover:bg-white/10">
+                Call 519-992-5412
+              </a>
+              <Link href="/contact" className="rounded-xl border border-white/20 px-7 py-3.5 text-sm font-semibold text-white transition hover:bg-white/10">
+                Contact Us
+              </Link>
+            </div>
+          </ScrollReveal>
+        </div>
+      </section>
+    </main>
   );
 }
