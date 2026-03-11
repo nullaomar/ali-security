@@ -58,19 +58,16 @@ export default function Home() {
                 <div className="mt-2 h-[2px] w-16 bg-[#8b6914]" />
               </div>
 
-              <h1 className="reveal-up mt-4 max-w-2xl text-[clamp(2rem,4.5vw,3.5rem)] font-semibold leading-none" style={revealDelay(200)}>
-                <span className="text-[var(--text-primary)]">
-                  <RotatingWords
-                    words={["Security", "Protection", "Safety", "Defense"]}
-                    interval={3000}
-                    className="text-shimmer"
-                  />{" "}
-                  You Can Trust.
-                </span>
-                <br />
-                <span className="text-shimmer">
-                  Service You&apos;ll Remember.
-                </span>
+              <h1 className="reveal-up mt-4 max-w-2xl text-[clamp(2rem,4.5vw,3.5rem)] font-semibold leading-tight" style={revealDelay(200)}>
+                <RotatingWords
+                  words={[
+                    "Security You Can Trust.",
+                    "Safety You Can Count On.",
+                    "Defense You Can Rely On.",
+                  ]}
+                  interval={5000}
+                  className="text-shimmer"
+                />
               </h1>
 
               <p

@@ -14,24 +14,31 @@ export default function RotatingWords({
   className = "",
 }: RotatingWordsProps) {
   const [index, setIndex] = useState(0);
-  const [animating, setAnimating] = useState(false);
 
   useEffect(() => {
     const timer = setInterval(() => {
-      setAnimating(true);
-      setTimeout(() => {
-        setIndex((prev) => (prev + 1) % words.length);
-        setAnimating(false);
-      }, 500);
+      setIndex((prev) => (prev + 1) % words.length);
     }, interval);
     return () => clearInterval(timer);
   }, [words.length, interval]);
 
   return (
     <span className="rotating-word-wrapper">
-      <span className={`rotating-word ${className} ${animating ? "exit" : "enter"}`}>
-        {words[index]}
-      </span>
+      {words.map((word, i) => (
+        <span
+          key={word}
+          className={`rotating-word ${className}`}
+          style={{
+            position: i === 0 ? "relative" : "absolute",
+            left: i === 0 ? undefined : 0,
+            top: i === 0 ? undefined : 0,
+            opacity: i === index ? 1 : 0,
+            transition: "opacity 500ms ease",
+          }}
+        >
+          {word}
+        </span>
+      ))}
     </span>
   );
 }
