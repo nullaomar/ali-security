@@ -49,7 +49,7 @@ export default function Navbar() {
   }
 
   return (
-    <header className="sticky top-0 z-50 border-b border-white/[0.06] bg-[rgba(0,0,0,0.85)] backdrop-blur-xl">
+    <header className="sticky top-0 z-50 border-b border-white/[0.06] bg-[rgba(15,27,45,0.95)] backdrop-blur-xl">
       <div className="mx-auto flex max-w-7xl items-center justify-between px-4 py-3 lg:px-8">
         {/* Logo - oversized to leak below navbar */}
         <Link href="/" className="relative z-50 flex items-center gap-2.5">

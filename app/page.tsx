@@ -44,21 +44,19 @@ export default function Home() {
         {/* Background slideshow */}
         <HeroSlideshow />
 
-        {/* Grid overlay */}
-        <div className="hero-grid absolute inset-0 pointer-events-none" />
 
         {/* Content */}
         <div className="relative z-10 mx-auto max-w-7xl px-5 pt-10 pb-14 md:pt-14 md:pb-20 lg:px-8">
           <div className="grid items-center gap-10 lg:grid-cols-[1.3fr_0.7fr]">
             <div>
-              <div className="reveal-up mt-1" style={revealDelay(150)}>
+              <div className="reveal-up mt-1" style={revealDelay(0)}>
                 <p className="text-[15px] font-bold uppercase tracking-[0.18em] text-[#0f1b2d]">
                   Welcome to Capra
                 </p>
                 <div className="mt-2 h-[2px] w-16 bg-[#8b6914]" />
               </div>
 
-              <h1 className="reveal-up mt-4 max-w-2xl text-[clamp(2rem,4.5vw,3.5rem)] font-semibold leading-tight" style={revealDelay(200)}>
+              <h1 className="reveal-up mt-4 max-w-2xl text-[clamp(2rem,4.5vw,3.5rem)] font-semibold leading-tight" style={revealDelay(80)}>
                 <RotatingWords
                   words={[
                     "Security You Can Trust.",
@@ -72,7 +70,7 @@ export default function Home() {
 
               <p
                 className="reveal-up mt-5 max-w-xl text-[15px] font-medium leading-relaxed text-[#111111]"
-                style={revealDelay(800)}
+                style={revealDelay(200)}
               >
                 Since 2020, Capra Security has built a nationwide network of vetted security professionals across Canada. We deliver tailored protection for corporate, retail, industrial, and event operations.
               </p>
@@ -81,7 +79,7 @@ export default function Home() {
                 <Link
                   href="/quote"
                   className="hero-btn hero-btn-red reveal-up inline-flex items-center gap-2 rounded-xl bg-[#0f1b2d] px-6 py-3 text-sm font-semibold text-white shadow-lg"
-                  style={revealDelay(1000)}
+                  style={revealDelay(350)}
                 >
                   Get a Quote
                   <svg viewBox="0 0 20 20" className="hero-btn-arrow h-4 w-4" fill="currentColor">
@@ -91,7 +89,7 @@ export default function Home() {
                 <Link
                   href="/services"
                   className="hero-btn hero-btn-white reveal-up inline-flex items-center gap-2 rounded-xl bg-white px-6 py-3 text-sm font-semibold text-[#0f1b2d] shadow-lg"
-                  style={revealDelay(1100)}
+                  style={revealDelay(450)}
                 >
                   View Services
                   <svg viewBox="0 0 20 20" className="hero-btn-arrow h-4 w-4" fill="currentColor">

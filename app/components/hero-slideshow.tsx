@@ -27,7 +27,7 @@ export default function HeroSlideshow() {
   useEffect(() => {
     const timer = setInterval(() => {
       setCurrent((prev) => (prev + 1) % slides.length);
-    }, 6000);
+    }, 4500);
     return () => clearInterval(timer);
   }, []);
 
@@ -43,9 +43,9 @@ export default function HeroSlideshow() {
         />
       ))}
       {/* Dark overlay for text readability */}
-      <div className="absolute inset-0 bg-gradient-to-r from-white/95 via-white/85 to-white/50" />
-      <div className="absolute inset-0 bg-gradient-to-b from-white/50 via-transparent to-[var(--surface)]" />
-      <div className="absolute inset-0 bg-black/25" />
+      <div className="absolute inset-0 bg-gradient-to-r from-white/90 via-white/75 to-white/35" />
+      <div className="absolute inset-0 bg-gradient-to-b from-white/40 via-transparent to-[var(--surface)]" />
+      <div className="absolute inset-0 bg-black/15" />
     </div>
   );
 }
