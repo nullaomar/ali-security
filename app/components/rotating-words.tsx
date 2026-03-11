@@ -33,7 +33,7 @@ export default function RotatingWords({
             left: i === 0 ? undefined : 0,
             top: i === 0 ? undefined : 0,
             opacity: i === index ? 1 : 0,
-            transition: "opacity 500ms ease",
+            transition: "opacity 800ms cubic-bezier(0.22, 1, 0.36, 1)",
           }}
         >
           {word}

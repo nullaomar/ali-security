@@ -6,7 +6,7 @@ type ScrollRevealProps = {
   children: ReactNode;
   className?: string;
   delayMs?: number;
-  variant?: "up" | "fade";
+  variant?: "up" | "fade" | "left" | "right" | "scale";
   once?: boolean;
   threshold?: number;
 };
@@ -44,7 +44,7 @@ export default function ScrollReveal({
     return () => observer.disconnect();
   }, [once, threshold]);
 
-  const revealClass = variant === "fade" ? "scroll-reveal-fade" : "scroll-reveal-up";
+  const revealClass = `scroll-reveal-${variant}`;
   const classes = [revealClass, visible ? "is-visible" : "", className].filter(Boolean).join(" ");
   const style = { "--reveal-delay": `${delayMs}ms` } as CSSProperties;
 

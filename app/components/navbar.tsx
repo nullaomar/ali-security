@@ -63,8 +63,8 @@ export default function Navbar() {
             priority
           />
           <div className="flex flex-col">
-            <span className="text-[16px] font-bold leading-tight tracking-tight text-white">Capra Security</span>
-            <span className="text-[10px] font-medium uppercase tracking-[0.08em] text-[#8b6914]">Security Services</span>
+            <span className="text-[16px] font-bold leading-tight tracking-tight text-white">CAPRA</span>
+            <span className="text-[10px] font-medium uppercase tracking-[0.08em] text-[#8b6914]">Security Services Inc.</span>
           </div>
         </Link>
 

@@ -73,7 +73,23 @@ h1, h2, h3 {
 @keyframes reveal-up {
   0% {
     opacity: 0;
-    transform: translate3d(0, 20px, 0);
+    transform: translate3d(0, 40px, 0) scale(0.97);
+  }
+  100% {
+    opacity: 1;
+    transform: translate3d(0, 0, 0) scale(1);
+  }
+}
+
+@keyframes reveal-fade {
+  0% { opacity: 0; transform: scale(0.98); }
+  100% { opacity: 1; transform: scale(1); }
+}
+
+@keyframes reveal-left {
+  0% {
+    opacity: 0;
+    transform: translate3d(-50px, 0, 0);
   }
   100% {
     opacity: 1;
@@ -81,38 +97,76 @@ h1, h2, h3 {
   }
 }
 
-@keyframes reveal-fade {
-  0% { opacity: 0; }
-  100% { opacity: 1; }
+@keyframes reveal-right {
+  0% {
+    opacity: 0;
+    transform: translate3d(50px, 0, 0);
+  }
+  100% {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+@keyframes reveal-scale {
+  0% {
+    opacity: 0;
+    transform: scale(0.85);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
 }
 
 .reveal-up {
   opacity: 0;
-  animation: reveal-up 700ms cubic-bezier(0.22, 1, 0.36, 1) forwards;
+  animation: reveal-up 900ms cubic-bezier(0.22, 1, 0.36, 1) forwards;
   animation-delay: var(--reveal-delay, 0ms);
   will-change: transform, opacity;
 }
 
 .reveal-fade {
   opacity: 0;
-  animation: reveal-fade 600ms ease forwards;
+  animation: reveal-fade 800ms cubic-bezier(0.22, 1, 0.36, 1) forwards;
   animation-delay: var(--reveal-delay, 0ms);
   will-change: opacity;
 }
 
 .scroll-reveal-up,
-.scroll-reveal-fade { opacity: 0; }
+.scroll-reveal-fade,
+.scroll-reveal-left,
+.scroll-reveal-right,
+.scroll-reveal-scale { opacity: 0; }
 
 .scroll-reveal-up.is-visible {
-  animation: reveal-up 700ms cubic-bezier(0.22, 1, 0.36, 1) forwards;
+  animation: reveal-up 900ms cubic-bezier(0.22, 1, 0.36, 1) forwards;
   animation-delay: var(--reveal-delay, 0ms);
   will-change: transform, opacity;
 }
 
 .scroll-reveal-fade.is-visible {
-  animation: reveal-fade 600ms ease forwards;
+  animation: reveal-fade 800ms cubic-bezier(0.22, 1, 0.36, 1) forwards;
   animation-delay: var(--reveal-delay, 0ms);
   will-change: opacity;
+}
+
+.scroll-reveal-left.is-visible {
+  animation: reveal-left 900ms cubic-bezier(0.22, 1, 0.36, 1) forwards;
+  animation-delay: var(--reveal-delay, 0ms);
+  will-change: transform, opacity;
+}
+
+.scroll-reveal-right.is-visible {
+  animation: reveal-right 900ms cubic-bezier(0.22, 1, 0.36, 1) forwards;
+  animation-delay: var(--reveal-delay, 0ms);
+  will-change: transform, opacity;
+}
+
+.scroll-reveal-scale.is-visible {
+  animation: reveal-scale 900ms cubic-bezier(0.22, 1, 0.36, 1) forwards;
+  animation-delay: var(--reveal-delay, 0ms);
+  will-change: transform, opacity;
 }
 
 /* ── Word-level staggered animation ── */
