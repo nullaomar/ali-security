@@ -144,21 +144,7 @@ h1, h2, h3 {
 
 /* ── Services heading shimmer ── */
 .services-text-shimmer {
-  background: linear-gradient(
-    90deg,
-    #ffffff 0%,
-    #a08030 15%,
-    #ffffff 30%,
-    #a08030 50%,
-    #ffffff 70%,
-    #a08030 85%,
-    #ffffff 100%
-  );
-  background-size: 200% auto;
-  -webkit-background-clip: text;
-  background-clip: text;
-  -webkit-text-fill-color: transparent;
-  animation: text-shimmer 14s linear infinite;
+  color: #ffffff;
 }
 
 /* ── Character shimmer on hero subtitle ── */
@@ -452,9 +438,34 @@ h1, h2, h3 {
   box-shadow: 0 12px 32px rgba(0, 0, 0, 0.1);
 }
 
-/* ── Testimonial card transition ── */
-.testimonial-card-active {
-  animation: reveal-up 500ms cubic-bezier(0.16, 1, 0.3, 1);
+/* ── Testimonial card transitions ── */
+@keyframes testimonial-progress {
+  0% { width: 0%; }
+  100% { width: 100%; }
+}
+
+.testimonial-progress {
+  animation: testimonial-progress 5.5s linear;
+}
+
+@keyframes testimonial-star-pop {
+  0% { transform: scale(0); opacity: 0; }
+  60% { transform: scale(1.2); }
+  100% { transform: scale(1); opacity: 1; }
+}
+
+.testimonial-star {
+  opacity: 0;
+  animation: testimonial-star-pop 350ms cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+@keyframes testimonial-fade-in {
+  0% { opacity: 0; transform: translateY(8px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+
+.testimonial-fade-in {
+  animation: testimonial-fade-in 450ms ease forwards;
 }
 
 @media (prefers-reduced-motion: reduce) {

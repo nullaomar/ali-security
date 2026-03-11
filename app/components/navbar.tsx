@@ -86,23 +86,20 @@ export default function Navbar() {
                   </svg>
                 </button>
                 {servicesOpen && (
-                  <div className="absolute left-1/2 -translate-x-1/2 top-[calc(100%+12px)] z-50 w-72 overflow-hidden rounded-xl border border-white/[0.08] bg-[#101114] p-2 shadow-2xl">
+                  <div className="absolute left-1/2 -translate-x-1/2 top-[calc(100%+12px)] z-50 w-56 rounded-lg border border-white/[0.08] bg-[#101114] py-1.5 shadow-2xl">
                     <Link
                       href="/services"
-                      className="mb-1 flex items-center gap-2 rounded-lg border-b border-white/[0.06] px-3 py-2.5 text-sm font-semibold text-white transition hover:bg-white/[0.04] hover:text-[#8b6914]"
+                      className="block px-4 py-2 text-[13px] font-semibold text-white/80 transition hover:bg-white/[0.04] hover:text-[#8b6914]"
                     >
-                      <svg viewBox="0 0 20 20" className="h-4 w-4 text-[#8b6914]" fill="currentColor">
-                        <path d="M10 3.5a6.5 6.5 0 100 13 6.5 6.5 0 000-13zM2 10a8 8 0 1116 0 8 8 0 01-16 0z" />
-                        <path d="M10 7a.75.75 0 01.75.75v1.5h1.5a.75.75 0 010 1.5h-1.5v1.5a.75.75 0 01-1.5 0v-1.5h-1.5a.75.75 0 010-1.5h1.5v-1.5A.75.75 0 0110 7z" />
-                      </svg>
-                      All Services Overview
+                      All Services
                     </Link>
+                    <div className="mx-3 my-1 h-px bg-white/[0.06]" />
                     {serviceLinks.map((s) => (
                       <Link
                         key={s.href}
                         href={s.href}
-                        className={`block rounded-lg px-3 py-2.5 text-[13px] transition hover:bg-white/[0.04] hover:text-[#8b6914] hover:translate-x-1 ${
-                          pathname === s.href ? "bg-white/[0.04] text-[#8b6914]" : "text-white/50"
+                        className={`block px-4 py-1.5 text-[13px] transition hover:bg-white/[0.04] hover:text-[#8b6914] ${
+                          pathname === s.href ? "text-[#8b6914]" : "text-white/45"
                         }`}
                       >
                         {s.label}
