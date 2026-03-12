@@ -33,7 +33,7 @@ export default async function ServicePage({ params }: Props) {
     <main className="min-h-screen bg-[var(--background)]">
       {/* Hero */}
       <section className="hero-grid border-b bg-gradient-to-b from-white via-[var(--background)] to-[var(--surface)]">
-        <div className="mx-auto max-w-7xl px-5 py-16 md:py-20 lg:px-8">
+        <div className="mx-auto max-w-7xl px-5 pt-28 pb-16 md:pt-32 md:pb-20 lg:px-8">
           <div className="flex items-center gap-2 text-[13px] text-[var(--text-tertiary)]">
             <Link href="/services" className="transition hover:text-[var(--accent)]">Services</Link>
             <span>/</span>

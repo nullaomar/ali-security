@@ -582,6 +582,37 @@ h1, h2, h3 {
   animation: testimonial-fade-in 450ms ease forwards;
 }
 
+/* ── Navbar floating animations ── */
+@keyframes navbar-dropdown-in {
+  0% {
+    opacity: 0;
+    transform: translateY(-8px) scale(0.98);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+@keyframes navbar-mobile-in {
+  0% {
+    opacity: 0;
+    transform: translateY(-12px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.navbar-dropdown-enter {
+  animation: navbar-dropdown-in 200ms cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.navbar-mobile-enter {
+  animation: navbar-mobile-in 300ms cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
 @media (prefers-reduced-motion: reduce) {
   .ticker-track { animation: none; }
 
@@ -606,6 +637,13 @@ h1, h2, h3 {
   .stat-pulse { animation: none; }
 
   .slideshow-img { animation: none; }
+
+  .navbar-dropdown-enter,
+  .navbar-mobile-enter {
+    animation: none;
+    opacity: 1;
+    transform: none;
+  }
 
   .rotating-word {
     opacity: 1 !important;

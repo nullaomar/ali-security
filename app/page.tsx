@@ -29,7 +29,7 @@ export default function Home() {
       <section className="glow-line relative overflow-hidden section-divider-down" style={{ background: "var(--background)" }}>
         <HeroSlideshow />
 
-        <div className="relative z-10 mx-auto max-w-7xl px-5 pt-10 pb-20 md:pt-14 md:pb-28 lg:px-8">
+        <div className="relative z-10 mx-auto max-w-7xl px-5 pt-36 pb-20 md:pt-40 md:pb-28 lg:px-8">
           <div className="grid items-center gap-10 lg:grid-cols-[1.3fr_0.7fr]">
             <div>
               <div className="reveal-up mt-1" style={revealDelay(0)}>
