@@ -121,7 +121,7 @@ export default function Home() {
                   <article className="service-bento relative h-[200px] overflow-hidden rounded-2xl">
                     {/* eslint-disable-next-line @next/next/no-img-element */}
                     <img src={service.image} alt={service.title} className="absolute inset-0 h-full w-full object-cover blur-[0.8px] transition-all duration-700 group-hover:scale-110 group-hover:blur-0" />
-                    <div className="service-overlay absolute inset-0 bg-gradient-to-t from-black/85 via-black/50 to-black/20" />
+                    <div className="service-overlay absolute inset-0 bg-gradient-to-t from-black/90 via-black/60 to-black/30" />
                     <div className="service-shine" />
                     <div className="service-border-glow" />
                     <div className="service-content relative flex h-full flex-col justify-end p-5">
@@ -147,7 +147,7 @@ export default function Home() {
                   <article className="service-bento relative h-[200px] overflow-hidden rounded-2xl">
                     {/* eslint-disable-next-line @next/next/no-img-element */}
                     <img src={service.image} alt={service.title} className="absolute inset-0 h-full w-full object-cover blur-[0.8px] transition-all duration-700 group-hover:scale-110 group-hover:blur-0" />
-                    <div className="service-overlay absolute inset-0 bg-gradient-to-t from-black/85 via-black/50 to-black/20" />
+                    <div className="service-overlay absolute inset-0 bg-gradient-to-t from-black/90 via-black/60 to-black/30" />
                     <div className="service-shine" />
                     <div className="service-border-glow" />
                     <div className="service-content relative flex h-full flex-col justify-end p-5">
@@ -189,31 +189,55 @@ export default function Home() {
       <section className="bg-[var(--background)] py-20">
         <div className="mx-auto max-w-7xl px-5 lg:px-8">
           <div className="grid items-center gap-12 lg:grid-cols-2">
-            <ScrollReveal delayMs={80} variant="left">
-              <div>
-                <p className="text-[15px] font-bold uppercase tracking-[0.18em] text-[#8b6914]">
-                  About Capra Security
-                </p>
-                <div className="mt-2 h-[2px] w-16 bg-[#0f1b2d]" />
-                <h2 className="mt-5 text-3xl font-semibold text-[#0f1b2d] md:text-4xl">
-                  A Trusted Partner in <span className="text-[#8b6914]">Protection</span>
-                </h2>
-                <p className="mt-4 text-base leading-relaxed text-[var(--text-secondary)]">
-                  Established in 2020, Capra Security has built a nationwide network of highly vetted security
-                  professionals. We examine performance indicators through comprehensive vetting processes and
-                  deliver personalized recommendations for every client.
-                </p>
-                <Link
-                  href="/about"
-                  className="btn-arrow mt-6 inline-flex items-center gap-2 text-sm font-semibold text-[#8b6914] transition hover:gap-3"
-                >
-                  Learn more about us
-                  <svg viewBox="0 0 20 20" className="h-4 w-4" fill="currentColor">
-                    <path fillRule="evenodd" d="M3 10a.75.75 0 01.75-.75h10.638L10.23 5.29a.75.75 0 111.04-1.08l5.5 5.25a.75.75 0 010 1.08l-5.5 5.25a.75.75 0 11-1.04-1.08l4.158-3.96H3.75A.75.75 0 013 10z" clipRule="evenodd" />
-                  </svg>
-                </Link>
+            <div className="relative">
+              {/* Floating animated photos behind text */}
+              <div className="absolute -top-12 -left-10 hidden lg:block pointer-events-none">
+                <div className="relative h-[380px] w-[480px]">
+                  {/* eslint-disable-next-line @next/next/no-img-element */}
+                  <img
+                    src="/security-guards-1.jpg"
+                    alt="Security team"
+                    className="about-float-1 absolute top-0 left-0 h-[270px] w-[320px] rounded-2xl object-cover opacity-10 blur-[1px]"
+                  />
+                  {/* eslint-disable-next-line @next/next/no-img-element */}
+                  <img
+                    src="/event-safety.jpg"
+                    alt="Event security"
+                    className="about-float-2 absolute bottom-0 right-0 h-[230px] w-[280px] rounded-2xl object-cover opacity-10 blur-[1px] -rotate-3"
+                  />
+                </div>
               </div>
-            </ScrollReveal>
+
+              <ScrollReveal delayMs={80} variant="left">
+                <div className="relative z-10">
+                  <p className="text-[15px] font-bold uppercase tracking-[0.18em] text-[#8b6914]">
+                    About Capra Security
+                  </p>
+                  <div className="mt-2 h-[2px] w-16 bg-[#0f1b2d]" />
+                  <h2 className="mt-5 text-3xl font-semibold text-[#0f1b2d] md:text-4xl">
+                    A Trusted Partner in{" "}
+                    <span className="relative inline-block">
+                      <span className="text-[#8b6914]">Protection</span>
+                      <span className="absolute -bottom-1 left-0 h-[3px] w-full bg-[#8b6914]/30 rounded-full" />
+                    </span>
+                  </h2>
+                  <p className="mt-5 max-w-md text-base leading-relaxed text-[var(--text-secondary)]">
+                    Established in 2020, Capra Security has built a nationwide network of highly vetted security
+                    professionals. We examine performance indicators through comprehensive vetting processes and
+                    deliver personalized recommendations for every client.
+                  </p>
+                  <Link
+                    href="/about"
+                    className="btn-arrow mt-6 inline-flex items-center gap-2 text-sm font-semibold text-[#8b6914] transition hover:gap-3"
+                  >
+                    Learn more about us
+                    <svg viewBox="0 0 20 20" className="h-4 w-4" fill="currentColor">
+                      <path fillRule="evenodd" d="M3 10a.75.75 0 01.75-.75h10.638L10.23 5.29a.75.75 0 111.04-1.08l5.5 5.25a.75.75 0 010 1.08l-5.5 5.25a.75.75 0 11-1.04-1.08l4.158-3.96H3.75A.75.75 0 013 10z" clipRule="evenodd" />
+                    </svg>
+                  </Link>
+                </div>
+              </ScrollReveal>
+            </div>
             <div className="grid grid-cols-2 gap-4">
               {[
                 { title: "Integrity", desc: "Transparent operations with honest reporting and ethical conduct at every level.", img: "https://images.unsplash.com/photo-1450101499163-c8848c66ca85?w=800&q=80&auto=format" },
