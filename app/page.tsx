@@ -15,13 +15,6 @@ const stats = [
   { value: "100%", label: "Licensed & Insured", sub: "Complete compliance" },
 ];
 
-const process = [
-  { step: "01", title: "Assessment", description: "We conduct a thorough on-site or virtual evaluation of your property, risks, and operational requirements." },
-  { step: "02", title: "Custom Solution", description: "Our team designs a tailored security plan with the right personnel, technology, protocols, and reporting structure." },
-  { step: "03", title: "Deployment", description: "Vetted, trained guards are deployed with GPS tracking, real-time reporting, and 24/7 dispatch support." },
-  { step: "04", title: "Ongoing Support", description: "Regular performance reviews, incident analysis, and plan adjustments ensure your security stays ahead of emerging threats." },
-];
-
 function revealDelay(delayMs: number): CSSProperties {
   return { "--reveal-delay": `${delayMs}ms` } as CSSProperties;
 }
@@ -109,7 +102,7 @@ export default function Home() {
                   <div className="mt-2 h-[2px] w-16 bg-white/50" />
                 </div>
                 <h2 className="mt-4 text-2xl font-semibold md:text-3xl">
-                  <span className="services-text-shimmer">Full-Spectrum Security Solutions</span>
+                  <span className="services-text-shimmer">Full-Spectrum <span className="text-[#8b6914]">Security</span> Solutions</span>
                 </h2>
               </div>
               <Link href="/services" className="btn-arrow inline-flex items-center gap-1.5 text-[13px] font-semibold text-white/70 transition hover:text-white">
@@ -203,7 +196,7 @@ export default function Home() {
                 </p>
                 <div className="mt-2 h-[2px] w-16 bg-[#0f1b2d]" />
                 <h2 className="mt-5 text-3xl font-semibold text-[#0f1b2d] md:text-4xl">
-                  A Trusted Partner in Protection
+                  A Trusted Partner in <span className="text-[#8b6914]">Protection</span>
                 </h2>
                 <p className="mt-4 text-base leading-relaxed text-[var(--text-secondary)]">
                   Established in 2020, Capra Security has built a nationwide network of highly vetted security
@@ -221,56 +214,36 @@ export default function Home() {
                 </Link>
               </div>
             </ScrollReveal>
-            <ScrollReveal delayMs={200} variant="right">
-              <div className="grid grid-cols-2 gap-3">
-                {[
-                  { title: "Integrity", desc: "Transparent operations with honest reporting and ethical conduct at every level." },
-                  { title: "Accountability", desc: "GPS tracking, shift logs, and real-time incident communication you can rely on." },
-                  { title: "Innovation", desc: "Leveraging modern technology for smarter, more efficient security operations." },
-                  { title: "Personalization", desc: "Every client receives a tailored security solution designed for their unique needs." },
-                ].map((v) => (
-                  <article key={v.title} className="rounded-2xl border border-[#0f1b2d]/10 bg-white p-5 transition-all duration-500 hover:-translate-y-1 hover:shadow-lg hover:border-[#8b6914]/30">
-                    <h3 className="text-sm font-semibold text-[#0f1b2d]">{v.title}</h3>
-                    <p className="mt-2 text-[13px] leading-relaxed text-[var(--text-tertiary)]">{v.desc}</p>
-                  </article>
-                ))}
-              </div>
-            </ScrollReveal>
-          </div>
-        </div>
-      </section>
-
-      {/* ── Process ── */}
-      <section className="bg-white section-divider-up" style={{ background: "white" }}>
-        <div className="mx-auto max-w-7xl px-5 pt-24 pb-20 lg:px-8">
-          <ScrollReveal delayMs={80} variant="fade">
-            <div className="mb-12 max-w-2xl">
-              <p className="text-[15px] font-bold uppercase tracking-[0.18em] text-[#8b6914]">
-                How It Works
-              </p>
-              <div className="mt-2 h-[2px] w-16 bg-[#0f1b2d]" />
-              <h2 className="mt-5 text-3xl font-semibold text-[#0f1b2d] md:text-4xl">
-                From Assessment to Deployment
-              </h2>
-            </div>
-          </ScrollReveal>
-
-          {/* Timeline-style process */}
-          <div className="relative">
-            {/* Connecting line */}
-            <div className="absolute left-4 top-0 bottom-0 hidden w-[2px] bg-gradient-to-b from-[#8b6914]/40 via-[#0f1b2d]/20 to-transparent lg:block" />
-
-            <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-4">
-              {process.map((p, idx) => (
-                <ScrollReveal key={p.step} delayMs={100 + idx * 150} variant={idx % 2 === 0 ? "left" : "right"}>
-                  <article className="relative rounded-2xl border border-[#0f1b2d]/10 bg-white p-6 transition-all duration-500 hover:-translate-y-2 hover:shadow-xl hover:border-[#8b6914]/30">
-                    <span className="inline-flex h-10 w-10 items-center justify-center rounded-full bg-[#0f1b2d] text-[13px] font-bold text-[#8b6914]">{p.step}</span>
-                    <h3 className="mt-3 text-lg font-semibold text-[#0f1b2d]">{p.title}</h3>
-                    <p className="mt-2 text-[13px] leading-relaxed text-[var(--text-tertiary)]">{p.description}</p>
-                    {idx < process.length - 1 && (
-                      <div className="absolute -right-3 top-1/2 hidden h-[2px] w-6 bg-[#8b6914]/30 lg:block" />
-                    )}
-                  </article>
+            <div className="grid grid-cols-2 gap-4">
+              {[
+                { title: "Integrity", desc: "Transparent operations with honest reporting and ethical conduct at every level.", img: "https://images.unsplash.com/photo-1450101499163-c8848c66ca85?w=800&q=80&auto=format" },
+                { title: "Accountability", desc: "GPS tracking, shift logs, and real-time incident communication you can rely on.", img: "https://images.unsplash.com/photo-1551836022-d5d88e9218df?w=800&q=80&auto=format" },
+                { title: "Innovation", desc: "Leveraging modern technology for smarter, more efficient security operations.", img: "https://images.unsplash.com/photo-1550751827-4bd374c3f58b?w=800&q=80&auto=format" },
+                { title: "Personalization", desc: "Every client receives a tailored security solution designed for their unique needs.", img: "https://images.unsplash.com/photo-1521791136064-7986c2920216?w=800&q=80&auto=format" },
+              ].map((v, idx) => (
+                <ScrollReveal key={v.title} delayMs={200 + idx * 120} variant="scale">
+                  <div className="flip-card h-[200px] cursor-pointer">
+                    <div className="flip-card-inner">
+                      {/* Front — image + title */}
+                      <div className="flip-card-front rounded-2xl overflow-hidden">
+                        {/* eslint-disable-next-line @next/next/no-img-element */}
+                        <img src={v.img} alt={v.title} className="absolute inset-0 h-full w-full object-cover" />
+                        <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent" />
+                        <div className="absolute inset-0 flex flex-col items-start justify-end p-4">
+                          <h3 className="text-sm font-bold text-white">{v.title}</h3>
+                          <p className="mt-1 text-[11px] text-white/50">Hover to learn more</p>
+                        </div>
+                      </div>
+                      {/* Back — description */}
+                      <div className="flip-card-back rounded-2xl bg-gradient-to-br from-[#0f1b2d] to-[#162a4a] flex flex-col items-center justify-center p-6 text-center">
+                        <div className="mb-3 h-10 w-10 rounded-full bg-[#8b6914]/20 flex items-center justify-center">
+                          <span className="text-lg font-bold text-[#8b6914]">0{idx + 1}</span>
+                        </div>
+                        <h3 className="text-base font-bold text-[#8b6914]">{v.title}</h3>
+                        <p className="mt-2 text-[12px] leading-relaxed text-white/60">{v.desc}</p>
+                      </div>
+                    </div>
+                  </div>
                 </ScrollReveal>
               ))}
             </div>
@@ -287,7 +260,7 @@ export default function Home() {
 
         <div className="relative mx-auto max-w-7xl px-5 py-20 text-center lg:px-8">
           <ScrollReveal delayMs={0} variant="scale">
-            <h2 className="text-3xl font-semibold text-white md:text-4xl">Ready to Secure Your Operation?</h2>
+            <h2 className="text-3xl font-semibold text-white md:text-4xl">Ready to <span className="text-[#8b6914]">Secure</span> Your Operation?</h2>
           </ScrollReveal>
           <ScrollReveal delayMs={150} variant="fade">
             <p className="mx-auto mt-4 max-w-2xl text-base leading-relaxed text-white/50">

@@ -6,7 +6,6 @@ const milestones = [
   { label: "Welcome", icon: "shield" },
   { label: "Services", icon: "grid" },
   { label: "About", icon: "users" },
-  { label: "Process", icon: "flow" },
   { label: "Contact", icon: "phone" },
 ];
 
