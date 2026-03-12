@@ -4,20 +4,20 @@ import { useEffect, useState } from "react";
 
 const slides = [
   {
-    src: "https://images.unsplash.com/photo-1521791055366-0d553872125f?w=1920&q=80&auto=format",
-    alt: "Security guard monitoring surveillance cameras",
+    src: "/event-safety.jpg",
+    alt: "Event safety and security",
   },
   {
-    src: "https://images.unsplash.com/photo-1557804506-669a67965ba0?w=1920&q=80&auto=format",
-    alt: "Corporate building security",
+    src: "/security-guards-1.jpg",
+    alt: "Security guards on duty",
   },
   {
-    src: "https://images.unsplash.com/photo-1504384308090-c894fdcc538d?w=1920&q=80&auto=format",
-    alt: "Modern office security operations",
+    src: "/firefighter.jpg",
+    alt: "Fire watch security guard",
   },
   {
-    src: "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=1920&q=80&auto=format",
-    alt: "Commercial building exterior at dusk",
+    src: "/loss-prevention.jpg",
+    alt: "Loss prevention security",
   },
 ];
 
