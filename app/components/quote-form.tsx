@@ -54,13 +54,13 @@ export default function QuoteForm() {
   if (submitted) {
     return (
       <div className="flex flex-col items-center justify-center py-14 text-center">
-        <div className="mb-5 flex h-16 w-16 items-center justify-center rounded-2xl bg-emerald-50">
-          <svg viewBox="0 0 24 24" className="h-8 w-8 text-emerald-500" fill="none" stroke="currentColor" strokeWidth="2">
+        <div className="mb-5 flex h-16 w-16 items-center justify-center rounded-2xl bg-[#8b6914]/15">
+          <svg viewBox="0 0 24 24" className="h-8 w-8 text-[#8b6914]" fill="none" stroke="currentColor" strokeWidth="2">
             <path d="M20 6L9 17l-5-5" />
           </svg>
         </div>
-        <h3 className="text-xl font-semibold text-[var(--text-primary)]">Quote Request Received</h3>
-        <p className="mt-2 max-w-sm text-sm text-[var(--text-tertiary)]">
+        <h3 className="text-xl font-semibold text-white">Quote Request Received</h3>
+        <p className="mt-2 max-w-sm text-sm text-white/40">
           Our team will review your request and provide a customized proposal within 24 hours.
         </p>
       </div>
@@ -68,69 +68,56 @@ export default function QuoteForm() {
   }
 
   const inputClass =
-    "w-full rounded-xl border border-[var(--border-strong)] bg-white px-4 py-3 text-sm text-[var(--text-primary)] outline-none transition-all placeholder:text-[var(--text-quaternary)] focus:border-[var(--blue)] focus:shadow-[0_0_0_3px_rgba(37,99,235,0.08)]";
+    "w-full rounded-xl border border-white/[0.08] bg-white/[0.04] px-4 py-3 text-sm text-white outline-none transition-all placeholder:text-white/25 focus:border-[#8b6914]/50 focus:bg-white/[0.06] focus:shadow-[0_0_0_3px_rgba(139,105,20,0.1)]";
+  const labelClass = "mb-1.5 block text-[13px] font-medium text-white/50";
 
   return (
     <form onSubmit={handleSubmit} className="space-y-5">
       {error && (
-        <div className="rounded-xl border border-red-200 bg-red-50 px-4 py-3 text-sm text-red-600">
+        <div className="rounded-xl border border-red-500/20 bg-red-500/10 px-4 py-3 text-sm text-red-400">
           {error}
         </div>
       )}
 
       <div className="grid gap-5 sm:grid-cols-2">
         <div>
-          <label htmlFor="name" className="mb-1.5 block text-[13px] font-medium text-[var(--text-secondary)]">
-            Full Name
-          </label>
+          <label htmlFor="name" className={labelClass}>Full Name</label>
           <input id="name" name="name" type="text" required placeholder="Your name" className={inputClass} />
         </div>
         <div>
-          <label htmlFor="company" className="mb-1.5 block text-[13px] font-medium text-[var(--text-secondary)]">
-            Company / Organization
-          </label>
+          <label htmlFor="company" className={labelClass}>Company / Organization</label>
           <input id="company" name="company" type="text" placeholder="Optional" className={inputClass} />
         </div>
       </div>
 
       <div className="grid gap-5 sm:grid-cols-2">
         <div>
-          <label htmlFor="email" className="mb-1.5 block text-[13px] font-medium text-[var(--text-secondary)]">
-            Email
-          </label>
+          <label htmlFor="email" className={labelClass}>Email</label>
           <input id="email" name="email" type="email" required placeholder="you@company.com" className={inputClass} />
         </div>
         <div>
-          <label htmlFor="phone" className="mb-1.5 block text-[13px] font-medium text-[var(--text-secondary)]">
-            Phone
-          </label>
+          <label htmlFor="phone" className={labelClass}>Phone</label>
           <input id="phone" name="phone" type="tel" required placeholder="(416) 000-0000" className={inputClass} />
         </div>
       </div>
 
       <div>
-        <label htmlFor="service" className="mb-1.5 block text-[13px] font-medium text-[var(--text-secondary)]">
-          Service Required
-        </label>
+        <label htmlFor="service" className={labelClass}>Service Required</label>
         <select id="service" name="service" required className={inputClass} defaultValue="">
           <option value="" disabled>Select a service</option>
           {serviceOptions.map((opt) => (
-            <option key={opt} value={opt}>{opt}</option>
+            <option key={opt} value={opt} className="bg-[#0a1220] text-white">{opt}</option>
           ))}
         </select>
       </div>
 
       <div>
-        <label htmlFor="location" className="mb-1.5 block text-[13px] font-medium text-[var(--text-secondary)]">
-          Location / Site Address
-        </label>
+        <label htmlFor="location" className={labelClass}>Location / Site Address</label>
         <input id="location" name="location" type="text" placeholder="City, Province or full address" className={inputClass} />
       </div>
 
       <div>
-        <label htmlFor="details" className="mb-1.5 block text-[13px] font-medium text-[var(--text-secondary)]">
-          Project Details
-        </label>
+        <label htmlFor="details" className={labelClass}>Project Details</label>
         <textarea
           id="details"
           name="details"
@@ -143,12 +130,12 @@ export default function QuoteForm() {
       <button
         type="submit"
         disabled={submitting}
-        className="w-full rounded-xl bg-[var(--accent)] px-5 py-3.5 text-sm font-semibold text-white transition-all hover:bg-[var(--accent-hover)] hover:shadow-lg hover:shadow-[var(--accent)]/10 disabled:opacity-60"
+        className="w-full rounded-xl bg-[#8b6914] px-5 py-3.5 text-sm font-semibold text-white transition-all hover:bg-[#a07a1a] hover:shadow-[0_8px_30px_rgba(139,105,20,0.3)] disabled:opacity-60"
       >
         {submitting ? "Submitting..." : "Request Free Quote"}
       </button>
 
-      <p className="text-center text-xs text-[var(--text-quaternary)]">
+      <p className="text-center text-xs text-white/25">
         No obligation. We typically respond within 2-4 business hours.
       </p>
     </form>
