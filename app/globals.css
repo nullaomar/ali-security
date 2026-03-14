@@ -613,6 +613,183 @@ h1, h2, h3 {
   animation: navbar-mobile-in 300ms cubic-bezier(0.16, 1, 0.3, 1) forwards;
 }
 
+/* ── Service page hero scroll indicator ── */
+@keyframes scroll-indicator {
+  0%, 100% { transform: translateY(0); opacity: 0.4; }
+  50% { transform: translateY(6px); opacity: 0.8; }
+}
+
+.service-scroll-line {
+  animation: scroll-indicator 2s ease-in-out infinite;
+}
+
+/* ── Feature card shine ── */
+.feature-shine {
+  background: linear-gradient(135deg, transparent 40%, rgba(139, 105, 20, 0.06) 50%, transparent 60%);
+  background-size: 300% 300%;
+  background-position: 100% 100%;
+  transition: background-position 0.6s ease;
+}
+
+.feature-card:hover .feature-shine {
+  background-position: 0% 0%;
+}
+
+.feature-card {
+  transition: transform 0.45s cubic-bezier(0.16, 1, 0.3, 1),
+              box-shadow 0.45s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.feature-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3), 0 0 16px rgba(139, 105, 20, 0.06);
+}
+
+/* ── Service other cards ── */
+.service-other-card {
+  transition: transform 0.45s cubic-bezier(0.16, 1, 0.3, 1),
+              box-shadow 0.45s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.service-other-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.4), 0 0 16px rgba(139, 105, 20, 0.1);
+}
+
+/* ── About collage floating images ── */
+@keyframes collage-float-1 {
+  0%, 100% { transform: translateY(0) rotate(0deg); }
+  30% { transform: translateY(-14px) rotate(1.2deg); }
+  60% { transform: translateY(-6px) rotate(-0.8deg); }
+}
+
+@keyframes collage-float-2 {
+  0%, 100% { transform: translateY(0) rotate(0deg); }
+  25% { transform: translateY(-8px) rotate(-1.5deg); }
+  50% { transform: translateY(-18px) rotate(0.6deg); }
+  75% { transform: translateY(-10px) rotate(-0.4deg); }
+}
+
+@keyframes collage-float-3 {
+  0%, 100% { transform: translateY(0) rotate(0deg) scale(1); }
+  35% { transform: translateY(-10px) rotate(2deg) scale(1.02); }
+  70% { transform: translateY(-4px) rotate(-1deg) scale(0.99); }
+}
+
+.collage-img-1 {
+  animation: collage-float-1 7s ease-in-out infinite;
+}
+
+.collage-img-2 {
+  animation: collage-float-2 8s ease-in-out infinite;
+  animation-delay: 1.5s;
+}
+
+.collage-img-3 {
+  animation: collage-float-3 6s ease-in-out infinite;
+  animation-delay: 0.8s;
+}
+
+.collage-img-1 img,
+.collage-img-2 img,
+.collage-img-3 img {
+  transition: transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.collage-img-1:hover img,
+.collage-img-2:hover img,
+.collage-img-3:hover img {
+  transform: scale(1.08);
+}
+
+/* ── Gold bar pulse ── */
+@keyframes gold-bar-pulse {
+  0%, 100% { opacity: 0.6; height: 40%; }
+  50% { opacity: 1; height: 50%; }
+}
+
+.gold-bar-animated {
+  animation: gold-bar-pulse 4s ease-in-out infinite;
+}
+
+.gold-bar-animated-2 {
+  animation: gold-bar-pulse 4s ease-in-out infinite;
+  animation-delay: 2s;
+}
+
+/* ── Quote band slow pan ── */
+@keyframes slow-pan {
+  0% { transform: scale(1.15) translateX(0); }
+  50% { transform: scale(1.15) translateX(-3%); }
+  100% { transform: scale(1.15) translateX(0); }
+}
+
+.quote-band-img {
+  animation: slow-pan 20s ease-in-out infinite;
+}
+
+/* ── Why-us card image ken-burns ── */
+@keyframes why-card-ken-burns {
+  0% { transform: scale(1); }
+  100% { transform: scale(1.06); }
+}
+
+.why-card-img {
+  animation: why-card-ken-burns 12s ease-in-out alternate infinite;
+}
+
+.why-card-img.delay-1 { animation-delay: 2s; }
+.why-card-img.delay-2 { animation-delay: 4s; }
+.why-card-img.delay-3 { animation-delay: 6s; }
+
+/* ── Client logo banner ── */
+@keyframes client-scroll {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+.client-banner {
+  -webkit-mask-image: linear-gradient(to right, transparent, black 8%, black 92%, transparent);
+  mask-image: linear-gradient(to right, transparent, black 8%, black 92%, transparent);
+}
+
+.client-banner-track {
+  animation: client-scroll 35s linear infinite;
+}
+
+.client-banner:hover .client-banner-track {
+  animation-play-state: paused;
+}
+
+/* ── Service CTA radial glow pulse ── */
+@keyframes cta-glow-pulse {
+  0%, 100% { opacity: 0.04; }
+  50% { opacity: 0.1; }
+}
+
+.cta-glow {
+  animation: cta-glow-pulse 4s ease-in-out infinite;
+}
+
+/* ── Gold shimmer for dark backgrounds ── */
+.text-shimmer-gold {
+  background: linear-gradient(
+    90deg,
+    #ffffff 0%,
+    #8b6914 20%,
+    #d4a017 35%,
+    #ffffff 50%,
+    #8b6914 65%,
+    #d4a017 80%,
+    #ffffff 100%
+  );
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: text-shimmer 5s linear infinite;
+}
+
 @media (prefers-reduced-motion: reduce) {
   .ticker-track { animation: none; }
 
@@ -650,4 +827,21 @@ h1, h2, h3 {
     transform: none !important;
     transition: none !important;
   }
+
+  .service-scroll-line { animation: none; }
+  .cta-glow { animation: none; }
+
+  .text-shimmer-gold {
+    animation: none;
+    -webkit-text-fill-color: #ffffff;
+  }
+
+  .feature-card { transition: none; }
+  .service-other-card { transition: none; }
+
+  .client-banner-track { animation: none; }
+  .collage-img-1, .collage-img-2, .collage-img-3 { animation: none; }
+  .gold-bar-animated, .gold-bar-animated-2 { animation: none; }
+  .quote-band-img { animation: none; transform: scale(1.15); }
+  .why-card-img { animation: none; }
 }

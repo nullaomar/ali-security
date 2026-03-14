@@ -1,127 +1,266 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import PageHero from "../components/page-hero";
 import ScrollReveal from "../components/scroll-reveal";
+import AboutHero from "../components/about-hero";
+import AboutStats from "../components/about-stats";
 
 export const metadata: Metadata = {
   title: "About Us | Capra Security",
-  description: "Learn about Capra Security — founded in 2020, operating a nationwide network of vetted security professionals guided by integrity, accountability, and innovation.",
+  description:
+    "Learn about Capra Security - with over 20 years of combined management experience, operating a nationwide network of vetted security professionals guided by integrity, accountability, and innovation.",
 };
 
-const values = [
-  { title: "Integrity", desc: "Transparent operations with honest reporting and ethical conduct at every level of our organization." },
-  { title: "Accountability", desc: "GPS tracking, shift logs, and real-time incident communication you can rely on at all times." },
-  { title: "Innovation", desc: "Leveraging modern technology for smarter, more efficient security operations and faster response times." },
-  { title: "Personalization", desc: "Every client receives a tailored security solution designed for their unique operational needs." },
-  { title: "Professionalism", desc: "Rigorous vetting and ongoing training ensures our guards uphold the highest standards of service." },
-  { title: "Reliability", desc: "24/7 dispatch centre and nationwide coverage means we are always ready when you need us." },
+const whyUs = [
+  {
+    title: "Accountable Reporting",
+    desc: "Detailed incident reports and shift logs delivered consistently.",
+    icon: "M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-6 9l2 2 4-4",
+    image:
+      "https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?w=600&q=80&auto=format",
+  },
+  {
+    title: "Responsive Management",
+    desc: "Direct access to management - not a call centre.",
+    icon: "M13 10V3L4 14h7v7l9-11h-7z",
+    image:
+      "https://images.unsplash.com/photo-1551836022-d5d88e9218df?w=600&q=80&auto=format",
+  },
+  {
+    title: "PM-Focused Approach",
+    desc: "Built for property manager workflows, expectations & escalations.",
+    icon: "M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z",
+    image:
+      "https://images.unsplash.com/photo-1557804506-669a67965ba0?w=600&q=80&auto=format",
+  },
+  {
+    title: "Scalable Coverage",
+    desc: "Single site or full portfolio - we scale to your footprint.",
+    icon: "M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z M15 11a3 3 0 11-6 0 3 3 0 016 0z",
+    image:
+      "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=600&q=80&auto=format",
+  },
 ];
 
-const milestones = [
-  { year: "2020", title: "Founded", desc: "Capra Security was established with a mission to deliver reliable, professional security services." },
-  { year: "2021", title: "Nationwide Expansion", desc: "Expanded operations to serve clients across multiple provinces with a growing team of vetted professionals." },
-  { year: "2022", title: "7 Service Lines", desc: "Launched our full spectrum of seven specialized security service categories." },
-  { year: "2023", title: "Technology Integration", desc: "Introduced GPS-tracked patrols, digital reporting, and real-time dispatch monitoring." },
-  { year: "2024", title: "Industry Recognition", desc: "Recognized for excellence in emergency fire watch and industrial security services." },
+const featuredClients = [
+  { name: "Morguard", industry: "REIT & Property Management" },
+  { name: "GWL Realty", industry: "Real Estate Investment" },
+  { name: "Bentall Green Oak", industry: "Real Estate Services" },
+  { name: "CBRE", industry: "Commercial Real Estate" },
+  { name: "Colliers", industry: "Property Management" },
+  { name: "Cadillac Fairview", industry: "Real Estate Investment" },
+  { name: "Oxford Properties", industry: "Real Estate & Investment" },
+  { name: "Dream Unlimited", industry: "Development & Management" },
 ];
 
 export default function AboutPage() {
   return (
-    <main className="min-h-screen bg-[var(--background)]">
-      <PageHero
-        badge="About Us"
-        title="Security You Can Trust. Service You'll Remember."
-        description="Established in 2020, Capra Security has built a nationwide network of highly vetted security professionals. We examine performance indicators through comprehensive vetting processes and deliver personalized recommendations for every client."
-      />
+    <main className="bg-[#080f1a]">
+      {/* ── 1. CINEMATIC HERO ── */}
+      <AboutHero />
 
-      {/* Mission */}
-      <section className="border-b bg-white">
-        <div className="mx-auto max-w-7xl px-5 py-20 lg:px-8">
-          <div className="grid gap-12 lg:grid-cols-2">
-            <ScrollReveal delayMs={80}>
+      {/* ── 2. STATS + FEATURED CLIENTS ── */}
+      <section className="border-y border-white/[0.04] bg-[#0a1220]">
+        <div className="mx-auto max-w-7xl px-5 py-10 lg:px-8 lg:py-14">
+          {/* Stats row */}
+          <AboutStats />
+
+          {/* Divider */}
+          <div className="mx-auto my-10 h-[1px] w-full bg-gradient-to-r from-transparent via-white/[0.06] to-transparent" />
+
+          {/* Featured Clients - Logo Banner */}
+          <ScrollReveal delayMs={80}>
+            <p className="text-center text-[11px] font-mono font-bold uppercase tracking-wider text-[#8b6914]/40">
+              Trusted By Industry Leaders
+            </p>
+          </ScrollReveal>
+          <div className="client-banner mt-6 overflow-hidden">
+            <div className="client-banner-track flex items-center">
+              {[0, 1].map((setIdx) => (
+                <div key={setIdx} className="flex shrink-0 items-center">
+                  {featuredClients.map((client) => (
+                    <div
+                      key={`${setIdx}-${client.name}`}
+                      className="group mx-8 flex shrink-0 items-center gap-3 md:mx-12"
+                    >
+                      {/* Logo-style icon */}
+                      <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg border border-white/[0.06] bg-white/[0.03] transition-all duration-400 group-hover:border-[#8b6914]/25 group-hover:bg-[#8b6914]/10">
+                        <span className="text-[15px] font-bold text-white/50 transition-colors duration-400 group-hover:text-[#a08030]">
+                          {client.name.charAt(0)}
+                        </span>
+                      </div>
+                      <div className="flex flex-col">
+                        <span className="whitespace-nowrap text-[14px] font-semibold text-white/40 transition-colors duration-400 group-hover:text-white/80">
+                          {client.name}
+                        </span>
+                        <span className="whitespace-nowrap text-[9px] font-medium uppercase tracking-wider text-white/15 transition-colors duration-400 group-hover:text-[#8b6914]/50">
+                          {client.industry}
+                        </span>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* ── 3. MISSION - IMAGE COLLAGE + TEXT ── */}
+      <section className="bg-[#0f1b2d]">
+        <div className="mx-auto max-w-7xl px-5 py-20 lg:px-8 lg:py-28">
+          <div className="grid items-center gap-12 lg:grid-cols-2 lg:gap-16">
+            {/* Left - Overlapping photo collage */}
+            <ScrollReveal variant="left" delayMs={80}>
+              <div className="relative mx-auto h-[420px] w-full max-w-md lg:h-[500px] lg:max-w-none">
+                {/* Main large image - floating */}
+                <div className="collage-img-1 absolute left-0 top-0 h-[70%] w-[65%] cursor-pointer overflow-hidden rounded-2xl shadow-2xl transition-shadow duration-500 hover:shadow-[0_20px_60px_rgba(139,105,20,0.15)]">
+                  <img
+                    src="https://images.unsplash.com/photo-1521791136064-7986c2920216?w=600&q=80&auto=format"
+                    alt="Security team"
+                    className="h-full w-full object-cover"
+                  />
+                  <div className="pointer-events-none absolute inset-0 rounded-2xl ring-1 ring-inset ring-white/[0.08] transition-all duration-500 hover:ring-[#8b6914]/20" />
+                </div>
+                {/* Secondary image - floating offset */}
+                <div className="collage-img-2 absolute bottom-0 right-0 h-[60%] w-[55%] cursor-pointer overflow-hidden rounded-2xl shadow-2xl transition-shadow duration-500 hover:shadow-[0_20px_60px_rgba(139,105,20,0.15)]">
+                  <img
+                    src="https://images.unsplash.com/photo-1497366216548-37526070297c?w=600&q=80&auto=format"
+                    alt="Corporate office"
+                    className="h-full w-full object-cover"
+                  />
+                  <div className="pointer-events-none absolute inset-0 rounded-2xl ring-1 ring-inset ring-white/[0.08]" />
+                </div>
+                {/* Small accent image - floating */}
+                <div className="collage-img-3 absolute right-[10%] top-[5%] h-[30%] w-[30%] cursor-pointer overflow-hidden rounded-xl shadow-xl transition-shadow duration-500 hover:shadow-[0_16px_40px_rgba(139,105,20,0.15)]">
+                  <img
+                    src="https://images.unsplash.com/photo-1573164713714-d95e436ab8d6?w=400&q=80&auto=format"
+                    alt="Monitoring"
+                    className="h-full w-full object-cover"
+                  />
+                  <div className="pointer-events-none absolute inset-0 rounded-xl ring-1 ring-inset ring-white/[0.08]" />
+                </div>
+                {/* Gold accent bars - pulsing */}
+                <div className="gold-bar-animated absolute -left-3 top-[15%] w-1 rounded-full bg-gradient-to-b from-[#8b6914] via-[#a08030] to-transparent" />
+                <div className="gold-bar-animated-2 absolute bottom-[20%] -right-3 w-1 rounded-full bg-gradient-to-t from-[#8b6914] via-[#a08030] to-transparent" />
+              </div>
+            </ScrollReveal>
+
+            {/* Right - Mission text */}
+            <ScrollReveal variant="right" delayMs={200}>
               <div>
-                <h2 className="text-3xl font-semibold text-[var(--text-primary)] md:text-4xl">Our Mission</h2>
-                <p className="mt-4 text-base leading-relaxed text-[var(--text-secondary)]">
-                  Our mission is delivering peace of mind through access to reliable, professional, and trusted
-                  security services — always guided by integrity, accountability, and innovation.
+                <span className="text-[13px] font-mono font-bold uppercase tracking-wider text-[#8b6914]/50">
+                  Our Mission
+                </span>
+                <h2 className="mt-3 text-3xl font-semibold text-white md:text-4xl">
+                  Delivering{" "}
+                  <span className="relative inline-block">
+                    <span className="text-[#8b6914]">Peace of Mind</span>
+                    <span className="absolute -bottom-1 left-0 h-[3px] w-full rounded-full bg-[#8b6914]/30" />
+                  </span>
+                </h2>
+                <p className="mt-6 text-base leading-[1.8] text-white/50">
+                  Our mission is delivering peace of mind through access to
+                  reliable, professional, and trusted security services - always
+                  guided by integrity, accountability, and innovation.
                 </p>
-                <p className="mt-3 text-base leading-relaxed text-[var(--text-secondary)]">
-                  Whether you need corporate security, retail loss prevention, industrial site protection, or
-                  event management, our team is your trusted partner. We take the time to understand your unique
-                  challenges and build security programs that address them comprehensively.
+                <p className="mt-4 text-base leading-[1.8] text-white/50">
+                  Whether you need corporate security, retail loss prevention,
+                  industrial site protection, or event management, our team is
+                  your trusted partner. With over 20 years of combined
+                  management experience, we have built a nationwide network of
+                  highly vetted professionals who deliver results.
                 </p>
-                <div className="mt-8 flex flex-wrap gap-3">
-                  <Link href="/services" className="rounded-xl bg-[var(--accent)] px-6 py-3 text-sm font-semibold text-white transition hover:bg-[var(--accent-hover)]">
+                <div className="mt-8 flex flex-wrap gap-4">
+                  <Link
+                    href="/services"
+                    className="hero-btn inline-flex items-center gap-2 rounded-xl bg-[#8b6914] px-6 py-3.5 text-sm font-semibold text-white transition hover:bg-[#a08030] hover:shadow-[0_12px_32px_rgba(139,105,20,0.3)]"
+                  >
                     View Our Services
+                    <svg
+                      viewBox="0 0 20 20"
+                      className="hero-btn-arrow h-4 w-4"
+                      fill="currentColor"
+                    >
+                      <path
+                        fillRule="evenodd"
+                        d="M3 10a.75.75 0 01.75-.75h10.638L10.23 5.29a.75.75 0 111.04-1.08l5.5 5.25a.75.75 0 010 1.08l-5.5 5.25a.75.75 0 11-1.04-1.08l4.158-3.96H3.75A.75.75 0 013 10z"
+                        clipRule="evenodd"
+                      />
+                    </svg>
                   </Link>
-                  <Link href="/contact" className="rounded-xl border border-[var(--border-strong)] px-6 py-3 text-sm font-semibold text-[var(--text-primary)] transition hover:border-[var(--accent)] hover:text-[var(--accent)]">
+                  <Link
+                    href="/contact"
+                    className="hero-btn inline-flex items-center rounded-xl border border-white/15 bg-white/5 px-6 py-3.5 text-sm font-semibold text-white transition hover:border-[#8b6914]/40 hover:bg-white/10"
+                  >
                     Contact Us
                   </Link>
                 </div>
               </div>
             </ScrollReveal>
-            <ScrollReveal delayMs={160}>
-              <div className="rounded-2xl border border-[var(--border)] bg-[var(--surface)] p-8">
-                <h3 className="text-lg font-semibold text-[var(--text-primary)]">Why Clients Choose Us</h3>
-                <ul className="mt-4 space-y-3">
-                  {[
-                    "Comprehensive vetting and performance indicator analysis",
-                    "Personalized security recommendations for every client",
-                    "Nationwide network with local expertise",
-                    "24/7 dispatch and emergency response capability",
-                    "Transparent reporting and real-time communication",
-                    "Full compliance with Provincial Fire Codes and bylaws",
-                  ].map((item) => (
-                    <li key={item} className="flex items-start gap-3 text-sm text-[var(--text-secondary)]">
-                      <svg viewBox="0 0 20 20" className="mt-0.5 h-4 w-4 shrink-0 fill-[var(--blue)]">
-                        <path fillRule="evenodd" d="M16.704 4.153a.75.75 0 01.143 1.052l-8 10.5a.75.75 0 01-1.127.075l-4.5-4.5a.75.75 0 011.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 011.05-.143z" clipRule="evenodd" />
+          </div>
+        </div>
+      </section>
+
+      {/* ── 4. WHY CAPRA - 4 IMAGE CARDS ── */}
+      <section className="border-t border-white/[0.04] bg-[#0a1220]">
+        <div className="mx-auto max-w-7xl px-5 py-20 lg:px-8 lg:py-28">
+          <ScrollReveal delayMs={80}>
+            <div className="text-center">
+              <span className="text-[13px] font-mono font-bold uppercase tracking-wider text-[#8b6914]/50">
+                Why Capra
+              </span>
+              <h2 className="mt-3 text-3xl font-semibold text-white md:text-4xl">
+                Why Clients{" "}
+                <span className="text-[#8b6914]">Choose Us</span>
+              </h2>
+            </div>
+          </ScrollReveal>
+
+          <div className="mt-12 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+            {whyUs.map((item, i) => (
+              <ScrollReveal
+                key={item.title}
+                delayMs={120 + i * 80}
+                variant="scale"
+              >
+                <div className="service-other-card group relative h-72 overflow-hidden rounded-2xl">
+                  {/* BG image with ken-burns */}
+                  <img
+                    src={item.image}
+                    alt=""
+                    className={`why-card-img absolute inset-0 h-full w-full object-cover transition-transform duration-700 group-hover:scale-110 ${i > 0 ? `delay-${i}` : ""}`}
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-[#080f1a] via-[#080f1a]/80 to-[#080f1a]/30" />
+
+                  {/* Hover border glow */}
+                  <div className="pointer-events-none absolute inset-0 rounded-2xl border border-transparent transition-colors duration-500 group-hover:border-[#8b6914]/30" />
+
+                  {/* Shine sweep */}
+                  <div className="feature-shine pointer-events-none absolute inset-0 z-[1]" />
+
+                  {/* Content at bottom */}
+                  <div className="relative flex h-full flex-col justify-end p-5">
+                    <div className="mb-3 flex h-9 w-9 items-center justify-center rounded-lg bg-[#8b6914]/20 backdrop-blur-sm transition-colors duration-300 group-hover:bg-[#8b6914]/30">
+                      <svg
+                        viewBox="0 0 24 24"
+                        className="h-4 w-4 text-[#a08030]"
+                        fill="none"
+                        stroke="currentColor"
+                        strokeWidth="1.5"
+                      >
+                        <path
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                          d={item.icon}
+                        />
                       </svg>
-                      {item}
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            </ScrollReveal>
-          </div>
-        </div>
-      </section>
-
-      {/* Values */}
-      <section className="border-b bg-[var(--background)]">
-        <div className="mx-auto max-w-7xl px-5 py-20 lg:px-8">
-          <ScrollReveal delayMs={80}>
-            <h2 className="text-3xl font-semibold text-[var(--text-primary)] md:text-4xl">Our Core Values</h2>
-            <p className="mt-3 max-w-2xl text-base text-[var(--text-secondary)]">
-              These principles guide every decision we make and every guard we deploy.
-            </p>
-          </ScrollReveal>
-          <div className="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-            {values.map((v, idx) => (
-              <ScrollReveal key={v.title} delayMs={120 + idx * 60}>
-                <article className="rounded-2xl border border-[var(--border)] bg-white p-6">
-                  <h3 className="text-[15px] font-semibold text-[var(--text-primary)]">{v.title}</h3>
-                  <p className="mt-2 text-[13px] leading-relaxed text-[var(--text-tertiary)]">{v.desc}</p>
-                </article>
-              </ScrollReveal>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Timeline */}
-      <section className="border-b bg-white">
-        <div className="mx-auto max-w-7xl px-5 py-20 lg:px-8">
-          <ScrollReveal delayMs={80}>
-            <h2 className="text-3xl font-semibold text-[var(--text-primary)] md:text-4xl">Our Journey</h2>
-          </ScrollReveal>
-          <div className="mt-10 space-y-4">
-            {milestones.map((m, idx) => (
-              <ScrollReveal key={m.year} delayMs={120 + idx * 70}>
-                <div className="flex gap-6 rounded-2xl border border-[var(--border)] bg-[var(--surface)] p-6">
-                  <span className="text-2xl font-semibold text-[var(--blue)]">{m.year}</span>
-                  <div>
-                    <h3 className="text-[15px] font-semibold text-[var(--text-primary)]">{m.title}</h3>
-                    <p className="mt-1 text-[13px] text-[var(--text-tertiary)]">{m.desc}</p>
+                    </div>
+                    <h3 className="text-[15px] font-bold text-white transition-transform duration-300 group-hover:translate-x-1">
+                      {item.title}
+                    </h3>
+                    <p className="mt-1.5 text-[12px] leading-relaxed text-white/40 transition-colors duration-300 group-hover:text-white/60">
+                      {item.desc}
+                    </p>
                   </div>
                 </div>
               </ScrollReveal>
@@ -130,17 +269,76 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* CTA */}
-      <section className="bg-[var(--accent)]">
-        <div className="mx-auto max-w-7xl px-5 py-16 text-center lg:px-8">
-          <ScrollReveal delayMs={80}>
-            <h2 className="text-3xl font-semibold text-white md:text-4xl">Join the Capra Security Team</h2>
-            <p className="mx-auto mt-4 max-w-xl text-base text-white/60">
-              We are always looking for dedicated professionals to join our growing network of security personnel.
+      {/* ── 5. FULL-WIDTH PHOTO BAND (was 6) ── */}
+      <section className="relative h-64 overflow-hidden md:h-80">
+        <img
+          src="https://images.unsplash.com/photo-1504384308090-c894fdcc538d?w=1600&q=80&auto=format"
+          alt=""
+          className="quote-band-img h-full w-full object-cover"
+          style={{ opacity: 0.3 }}
+        />
+        <div className="absolute inset-0 bg-gradient-to-r from-[#080f1a] via-transparent to-[#080f1a]" />
+        <div className="absolute inset-0 bg-gradient-to-b from-[#0a1220] via-transparent to-[#0f1b2d]" />
+        <div className="absolute inset-0 flex items-center justify-center">
+          <ScrollReveal variant="scale" delayMs={80}>
+            <div className="text-center">
+              <p className="text-lg font-semibold text-white/80 md:text-2xl">
+                &ldquo;Protection is not just what we do -{" "}
+                <span className="text-[#8b6914]">it&apos;s who we are.</span>
+                &rdquo;
+              </p>
+              <p className="mt-3 text-[12px] uppercase tracking-wider text-white/30">
+                Capra Security Leadership
+              </p>
+            </div>
+          </ScrollReveal>
+        </div>
+      </section>
+
+      {/* ── 6. CTA ── */}
+      <section className="relative overflow-hidden border-t border-white/[0.04] bg-[#080f1a]">
+        <div className="cta-glow pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_at_center,_rgba(139,105,20,0.15)_0%,_transparent_65%)]" />
+
+        <div className="relative mx-auto max-w-7xl px-5 py-20 text-center lg:px-8 lg:py-28">
+          <ScrollReveal variant="scale" delayMs={80}>
+            <h2 className="text-shimmer-gold text-4xl font-bold md:text-5xl">
+              Join the Capra Security Team
+            </h2>
+            <p className="mx-auto mt-5 max-w-xl text-base leading-relaxed text-white/35">
+              We are always looking for dedicated professionals to join our
+              growing network of security personnel across Canada.
             </p>
-            <div className="mt-8 flex flex-wrap justify-center gap-3">
-              <Link href="/apply" className="rounded-xl bg-white px-7 py-3.5 text-sm font-semibold text-[var(--accent)] transition hover:bg-gray-50">Apply Now</Link>
-              <Link href="/contact" className="rounded-xl border border-white/20 px-7 py-3.5 text-sm font-semibold text-white transition hover:bg-white/10">Contact Us</Link>
+
+            <div className="mt-10 flex flex-wrap justify-center gap-4">
+              <Link
+                href="/apply"
+                className="hero-btn group inline-flex items-center gap-2 rounded-xl bg-[#8b6914] px-8 py-4 text-sm font-semibold text-white transition hover:bg-[#a08030] hover:shadow-[0_12px_32px_rgba(139,105,20,0.3)]"
+              >
+                Apply Now
+                <svg
+                  viewBox="0 0 20 20"
+                  className="hero-btn-arrow h-4 w-4"
+                  fill="currentColor"
+                >
+                  <path
+                    fillRule="evenodd"
+                    d="M3 10a.75.75 0 01.75-.75h10.638L10.23 5.29a.75.75 0 111.04-1.08l5.5 5.25a.75.75 0 010 1.08l-5.5 5.25a.75.75 0 11-1.04-1.08l4.158-3.96H3.75A.75.75 0 013 10z"
+                    clipRule="evenodd"
+                  />
+                </svg>
+              </Link>
+              <Link
+                href="/contact"
+                className="hero-btn inline-flex items-center rounded-xl border border-white/15 bg-white/5 px-8 py-4 text-sm font-semibold text-white backdrop-blur-sm transition hover:border-[#8b6914]/40 hover:bg-white/10"
+              >
+                Contact Us
+              </Link>
+              <Link
+                href="/quote"
+                className="hero-btn inline-flex items-center rounded-xl border border-white/15 bg-white/5 px-8 py-4 text-sm font-semibold text-white backdrop-blur-sm transition hover:border-[#8b6914]/40 hover:bg-white/10"
+              >
+                Get a Quote
+              </Link>
             </div>
           </ScrollReveal>
         </div>

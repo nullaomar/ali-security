@@ -8,24 +8,61 @@ export type ServiceData = {
   image: string;
 };
 
+// Main 4 services (displayed prominently on homepage)
 export const services: ServiceData[] = [
   {
-    title: "Fire Watch Security Guard",
-    slug: "fire-watch",
+    title: "REIT Security",
+    slug: "reit-security",
     shortDesc:
-      "Provincial Fire Code compliant fire watch services for fire departments, commercial enterprises, construction, and restoration companies.",
+      "Comprehensive security solutions for real estate investment trusts, protecting multi-property portfolios and tenants.",
     longDesc:
-      "Capra Security provides Fire Watch security for fire departments, commercial enterprises, construction, and restoration companies. Our guards ensure full compliance with Provincial Fire Code Regulations and Municipal/City Bylaws. We deploy immediately when fire suppression systems are down, during hot work operations, or whenever a fire watch is mandated. Our personnel are trained in fire prevention protocols, evacuation procedures, and emergency response coordination.",
+      "Capra Security delivers tailored security programs for Real Estate Investment Trusts managing residential, commercial, and mixed-use portfolios. We provide consistent, professional security across all your properties - from concierge-level lobby presence to overnight patrol coverage. Our REIT-focused approach ensures tenant satisfaction, asset protection, and regulatory compliance across your entire portfolio.",
     features: [
-      "Provincial Fire Code Regulation compliance",
-      "Municipal and City Bylaw adherence",
-      "Immediate emergency deployment",
-      "Hot work monitoring and supervision",
-      "Fire suppression system downtime coverage",
-      "Detailed incident and patrol logging",
+      "Multi-property portfolio security management",
+      "Tenant safety and satisfaction programs",
+      "Lobby and common area security presence",
+      "Parking structure and amenity monitoring",
+      "Incident reporting with portfolio-wide analytics",
+      "Scalable coverage across residential and commercial assets",
     ],
-    iconPath: "M12 22c-4.97 0-9-2.686-9-6v-.002C3 8.168 12 2 12 2s9 6.168 9 13.998V16c0 3.314-4.03 6-9 6z M12 22c-1.657 0-3-1.343-3-3v-.002C9 14.998 12 12 12 12s3 2.998 3 6.998V19c0 1.657-1.343 3-3 3z",
-    image: "/fire-watch-security.jpg",
+    iconPath: "M3 21h18 M3 7v14 M21 7v14 M6 11h2 M6 15h2 M10 11h2 M10 15h2 M14 11h2 M14 15h2 M18 11h2 M18 15h2 M12 3l9 4H3l9-4z",
+    image: "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=800&q=80&auto=format",
+  },
+  {
+    title: "Property Management Security",
+    slug: "property-management",
+    shortDesc:
+      "Dedicated security services for property managers overseeing residential, commercial, and mixed-use buildings.",
+    longDesc:
+      "Capra Security partners with property management companies to deliver reliable, professional security tailored to each building's needs. From access control and visitor management to emergency response and overnight patrols, our guards integrate seamlessly with your management team. We help reduce liability, protect tenants, and maintain the safety standards that elevate your properties.",
+    features: [
+      "Access control and visitor management",
+      "Overnight and weekend patrol coverage",
+      "Emergency response coordination",
+      "Tenant complaint and disturbance resolution",
+      "Building safety compliance support",
+      "Detailed shift reports for property managers",
+    ],
+    iconPath: "M3 21h18 M9 8h1 M9 12h1 M9 16h1 M14 8h1 M14 12h1 M14 16h1 M5 21V5a2 2 0 012-2h10a2 2 0 012 2v16",
+    image: "https://images.unsplash.com/photo-1560518883-ce09059eeffa?w=800&q=80&auto=format",
+  },
+  {
+    title: "Commercial & Industrial Logistics",
+    slug: "commercial-industrial-logistics",
+    shortDesc:
+      "Specialized security for commercial facilities, manufacturing plants, warehouses, and distribution centres.",
+    longDesc:
+      "Capra Security provides specialized security solutions for commercial operations, manufacturing plants, warehouses, distribution centres, and industrial facilities. Our guards are trained in industrial safety protocols, access control systems, and hazard awareness. We protect your assets, personnel, and supply chain operations while maintaining compliance with workplace safety regulations.",
+    features: [
+      "Manufacturing plant and warehouse security",
+      "Supply chain and logistics protection",
+      "Access control and visitor management",
+      "Perimeter security and intrusion detection",
+      "Hazardous materials area monitoring",
+      "Asset protection and inventory security",
+    ],
+    iconPath: "M2 20h20 M5 20V8l5 4V8l5 4V4l5 4v12",
+    image: "https://images.unsplash.com/photo-1513828583688-c52646db42da?w=800&q=80&auto=format",
   },
   {
     title: "Mobile Security Guard",
@@ -45,6 +82,7 @@ export const services: ServiceData[] = [
     iconPath: "M1 3h15a2 2 0 012 2v11H1V5a2 2 0 012-2z M16 8h4l3 3v5h-7V8z M5.5 18.5a2.5 2.5 0 100-5 2.5 2.5 0 000 5z M18.5 18.5a2.5 2.5 0 100-5 2.5 2.5 0 000 5z",
     image: "/mobile-patrol-security.jpg",
   },
+  // ── Additional services (dropdown / services page only) ──
   {
     title: "Loss Prevention",
     slug: "loss-prevention",
@@ -69,7 +107,7 @@ export const services: ServiceData[] = [
     shortDesc:
       "Professional security personnel acting as friendly and approachable ambassadors for safe, high-visibility events.",
     longDesc:
-      "Capra Security provides professional security personnel who are focused on customer service, acting as friendly and approachable ambassadors for your event. Our teams maintain high-visibility, safe environments for events of any scale — from corporate conferences and festivals to private gatherings and sporting events. We handle crowd management, access control, VIP protection, and emergency coordination.",
+      "Capra Security provides professional security personnel who are focused on customer service, acting as friendly and approachable ambassadors for your event. Our teams maintain high-visibility, safe environments for events of any scale - from corporate conferences and festivals to private gatherings and sporting events. We handle crowd management, access control, VIP protection, and emergency coordination.",
     features: [
       "Crowd management and flow control",
       "VIP and executive protection details",
@@ -80,42 +118,6 @@ export const services: ServiceData[] = [
     ],
     iconPath: "M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2 M9 7a4 4 0 100-8 4 4 0 000 8z M23 21v-2a4 4 0 00-3-3.87 M16 3.13a4 4 0 010 7.75",
     image: "/event-security.jpeg",
-  },
-  {
-    title: "Security Operations & Logistics",
-    slug: "operations-logistics",
-    shortDesc:
-      "End-to-end security planning, coordination, and staffing logistics for large-scale operations.",
-    longDesc:
-      "Our Security Operations & Logistics service delivers end-to-end security planning, coordination, and staffing for large-scale operations. We manage strategic deployment, command center operations, shift scheduling, and inter-agency coordination. From critical infrastructure protection to large corporate campuses, our operations team ensures seamless execution of comprehensive security programs.",
-    features: [
-      "Strategic security planning and deployment",
-      "Command center setup and management",
-      "Shift scheduling and personnel logistics",
-      "Inter-agency and multi-vendor coordination",
-      "Real-time operations monitoring",
-      "Comprehensive after-action reporting",
-    ],
-    iconPath: "M12 2L2 7l10 5 10-5-10-5z M2 17l10 5 10-5 M2 12l10 5 10-5",
-    image: "https://images.unsplash.com/photo-1504384308090-c894fdcc538d?w=800&q=80&auto=format",
-  },
-  {
-    title: "Industrial Security Services",
-    slug: "industrial-security",
-    shortDesc:
-      "Specialized security for manufacturing plants, warehouses, and industrial facilities.",
-    longDesc:
-      "Capra Security provides specialized security solutions for manufacturing plants, warehouses, distribution centres, and industrial facilities. Our guards are trained in industrial safety protocols, access control systems, and hazard awareness. We protect your assets, personnel, and operations while maintaining compliance with workplace safety regulations.",
-    features: [
-      "Manufacturing plant and warehouse security",
-      "Access control and visitor management",
-      "Perimeter security and intrusion detection",
-      "Hazardous materials area monitoring",
-      "Workplace safety compliance support",
-      "Asset protection and inventory security",
-    ],
-    iconPath: "M2 20h20 M5 20V8l5 4V8l5 4V4l5 4v12",
-    image: "https://images.unsplash.com/photo-1513828583688-c52646db42da?w=800&q=80&auto=format",
   },
   {
     title: "Onsite Construction Security",
@@ -134,6 +136,24 @@ export const services: ServiceData[] = [
     ],
     iconPath: "M2 6h20v12H2z M12 2v4 M6 18v4 M18 18v4 M2 12h20",
     image: "https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=800&q=80&auto=format",
+  },
+  {
+    title: "Fire Watch Security Guard",
+    slug: "fire-watch",
+    shortDesc:
+      "Provincial Fire Code compliant fire watch services for fire departments, commercial enterprises, construction, and restoration companies.",
+    longDesc:
+      "Capra Security provides Fire Watch security for fire departments, commercial enterprises, construction, and restoration companies. Our guards ensure full compliance with Provincial Fire Code Regulations and Municipal/City Bylaws. We deploy immediately when fire suppression systems are down, during hot work operations, or whenever a fire watch is mandated. Our personnel are trained in fire prevention protocols, evacuation procedures, and emergency response coordination.",
+    features: [
+      "Provincial Fire Code Regulation compliance",
+      "Municipal and City Bylaw adherence",
+      "Immediate emergency deployment",
+      "Hot work monitoring and supervision",
+      "Fire suppression system downtime coverage",
+      "Detailed incident and patrol logging",
+    ],
+    iconPath: "M12 22c-4.97 0-9-2.686-9-6v-.002C3 8.168 12 2 12 2s9 6.168 9 13.998V16c0 3.314-4.03 6-9 6z M12 22c-1.657 0-3-1.343-3-3v-.002C9 14.998 12 12 12 12s3 2.998 3 6.998V19c0 1.657-1.343 3-3 3z",
+    image: "/fire-watch-security.jpg",
   },
 ];
 
