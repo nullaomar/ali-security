@@ -143,7 +143,7 @@ export default function Navbar() {
         {/* Desktop CTA */}
         <div className="hidden items-center gap-5 lg:flex">
           <a
-            href="tel:5199925412"
+            href="tel:4169530539"
             className="flex items-center gap-1.5 text-[13px] font-semibold text-white/70 transition hover:text-white"
           >
             <svg viewBox="0 0 24 24" className="h-4 w-4" fill="none" stroke="currentColor" strokeWidth="2">
@@ -200,10 +200,10 @@ export default function Navbar() {
             </div>
             <div className="mt-4 flex flex-col gap-2">
               <a
-                href="tel:5199925412"
+                href="tel:4169530539"
                 className="rounded-full border border-white/[0.06] px-3 py-2.5 text-center text-sm text-white/60 transition hover:text-white"
               >
-                Call 519-992-5412
+                Call 416-953-0539
               </a>
               <Link
                 href="/quote"

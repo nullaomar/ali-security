@@ -46,11 +46,11 @@ export default function QuotePage() {
                 <div className="mt-8 rounded-2xl border border-[var(--border)] bg-[var(--surface)] p-5">
                   <p className="text-sm font-semibold text-[var(--text-primary)]">Prefer to talk?</p>
                   <p className="mt-1 text-[13px] text-[var(--text-tertiary)]">Call us directly for an immediate consultation.</p>
-                  <a href="tel:5199925412" className="mt-3 inline-flex items-center gap-2 text-sm font-semibold text-[var(--blue)] transition hover:text-[var(--accent)]">
+                  <a href="tel:4169530539" className="mt-3 inline-flex items-center gap-2 text-sm font-semibold text-[var(--blue)] transition hover:text-[var(--accent)]">
                     <svg viewBox="0 0 24 24" className="h-4 w-4" fill="none" stroke="currentColor" strokeWidth="2">
                       <path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z" />
                     </svg>
-                    519-992-5412
+                    416-953-0539
                   </a>
                 </div>
               </div>

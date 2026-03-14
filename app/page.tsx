@@ -271,8 +271,8 @@ export default function Home() {
               <Link href="/quote" className="rounded-xl bg-[#8b6914] px-7 py-3.5 text-sm font-semibold text-white shadow-lg transition-all duration-400 hover:-translate-y-1 hover:bg-[#a07a1a] hover:shadow-[0_8px_30px_rgba(139,105,20,0.3)]">
                 Request a Quote
               </Link>
-              <a href="tel:5199925412" className="rounded-xl border border-white/15 px-7 py-3.5 text-sm font-semibold text-white transition-all duration-400 hover:-translate-y-1 hover:bg-white/5 hover:border-[#8b6914]/40">
-                Call 519-992-5412
+              <a href="tel:4169530539" className="rounded-xl border border-white/15 px-7 py-3.5 text-sm font-semibold text-white transition-all duration-400 hover:-translate-y-1 hover:bg-white/5 hover:border-[#8b6914]/40">
+                Call 416-953-0539
               </a>
               <Link href="/contact" className="rounded-xl border border-white/15 px-7 py-3.5 text-sm font-semibold text-white transition-all duration-400 hover:-translate-y-1 hover:bg-white/5 hover:border-[#8b6914]/40">
                 Contact Us

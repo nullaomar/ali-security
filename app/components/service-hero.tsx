@@ -121,13 +121,13 @@ export default function ServiceHero({ title, description, image }: Props) {
             </svg>
           </Link>
           <a
-            href="tel:5199925412"
+            href="tel:4169530539"
             className="hero-btn inline-flex items-center gap-2 rounded-xl border border-white/15 bg-white/5 px-7 py-4 text-sm font-semibold text-white backdrop-blur-sm transition hover:border-[#8b6914]/40 hover:bg-white/10"
           >
             <svg viewBox="0 0 20 20" className="h-4 w-4" fill="currentColor">
               <path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z" />
             </svg>
-            519-992-5412
+            416-953-0539
           </a>
         </div>
       </div>

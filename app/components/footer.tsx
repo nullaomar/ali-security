@@ -85,7 +85,7 @@ export default function Footer() {
                 <svg viewBox="0 0 24 24" className="mt-0.5 h-4 w-4 shrink-0 text-white/35" fill="none" stroke="currentColor" strokeWidth="2">
                   <path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z" />
                 </svg>
-                <a href="tel:5199925412" className="transition hover:text-white">519-992-5412</a>
+                <a href="tel:4169530539" className="transition hover:text-white">416-953-0539</a>
               </li>
               <li className="flex items-start gap-2">
                 <svg viewBox="0 0 24 24" className="mt-0.5 h-4 w-4 shrink-0 text-white/35" fill="none" stroke="currentColor" strokeWidth="2">
@@ -99,7 +99,7 @@ export default function Footer() {
                   <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z" />
                   <circle cx="12" cy="10" r="3" />
                 </svg>
-                <span>3129 Marentette Ave, Unit #5<br />Windsor, Ontario N8X 4G1</span>
+                <span>7315 Torbram Rd<br />Mississauga, ON L4T 1G8<br /><br />3129 Marentette Ave, Unit #5<br />Windsor, Ontario N8X 4G1</span>
               </li>
             </ul>
           </div>

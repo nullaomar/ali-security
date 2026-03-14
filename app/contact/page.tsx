@@ -5,7 +5,7 @@ import ScrollReveal from "../components/scroll-reveal";
 
 export const metadata: Metadata = {
   title: "Contact Us | Capra Security",
-  description: "Get in touch with Capra Security. Call 519-992-5412 or email info@caprasecurity.ca. Located at 3129 Marentette Ave, Unit #5, Windsor, Ontario.",
+  description: "Get in touch with Capra Security. Call 416-953-0539 or email info@caprasecurity.ca. Offices in Mississauga and Windsor, Ontario.",
 };
 
 const contactMethods = [
@@ -16,9 +16,9 @@ const contactMethods = [
       </svg>
     ),
     label: "Phone",
-    value: "519-992-5412",
+    value: "416-953-0539",
     detail: "Available 24/7 for emergencies",
-    href: "tel:5199925412",
+    href: "tel:4169530539",
   },
   {
     icon: (
@@ -39,9 +39,9 @@ const contactMethods = [
         <circle cx="12" cy="10" r="3" />
       </svg>
     ),
-    label: "Office",
-    value: "3129 Marentette Ave, Unit #5",
-    detail: "Windsor, Ontario N8X 4G1",
+    label: "Offices",
+    value: "7315 Torbram Rd, Mississauga, ON L4T 1G8",
+    detail: "3129 Marentette Ave, Unit #5, Windsor, ON N8X 4G1",
   },
 ];
 
@@ -100,7 +100,7 @@ export default function ContactPage() {
                 <div className="mt-6 rounded-2xl border border-[var(--blue)]/15 bg-[var(--blue-soft)] p-5">
                   <p className="text-sm font-semibold text-[var(--accent)]">24/7 Emergency Response</p>
                   <p className="mt-1 text-[13px] text-[var(--text-secondary)]">
-                    Our dispatch centre operates around the clock. For urgent security needs, call us directly at 519-992-5412 for immediate assistance.
+                    Our dispatch centre operates around the clock. For urgent security needs, call us directly at 416-953-0539 for immediate assistance.
                   </p>
                 </div>
               </div>

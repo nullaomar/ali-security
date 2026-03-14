@@ -57,8 +57,9 @@ export default function SitemapPage() {
             <div>
               <h2 className="text-lg font-semibold text-[var(--text-primary)]">Contact</h2>
               <ul className="mt-4 space-y-2.5 text-sm text-[var(--text-secondary)]">
-                <li><a href="tel:5199925412" className="transition hover:text-[var(--blue)]">519-992-5412</a></li>
+                <li><a href="tel:4169530539" className="transition hover:text-[var(--blue)]">416-953-0539</a></li>
                 <li><a href="mailto:info@caprasecurity.ca" className="transition hover:text-[var(--blue)]">info@caprasecurity.ca</a></li>
+                <li>7315 Torbram Rd, Mississauga, ON L4T 1G8</li>
                 <li>3129 Marentette Ave, Unit #5<br />Windsor, Ontario N8X 4G1</li>
               </ul>
             </div>
