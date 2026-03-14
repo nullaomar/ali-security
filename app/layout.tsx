@@ -18,7 +18,7 @@ const dmMono = DM_Mono({
 export const metadata: Metadata = {
   title: "Capra Security | Security You Can Trust",
   description:
-    "Emergency Security Management providing Fire Watch, Loss Prevention, Event Security, Mobile Patrol, and Industrial Security Services nationwide. Founded 2020.",
+    "Emergency Security Management providing REIT Security, Property Management, Commercial & Industrial Logistics, Mobile Patrol, and more nationwide. Over 20 years of combined management experience.",
 };
 
 export default function RootLayout({

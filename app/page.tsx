@@ -10,8 +10,7 @@ import { services } from "./lib/services-data";
 
 const stats = [
   { value: "24/7", label: "Operations Centre", sub: "Always active" },
-  { value: "2020", label: "Year Founded", sub: "Growing nationwide" },
-  { value: "7+", label: "Service Categories", sub: "Full-spectrum coverage" },
+  { value: "20+", label: "Years Combined Experience", sub: "Proven management team" },
   { value: "100%", label: "Licensed & Insured", sub: "Complete compliance" },
 ];
 
@@ -55,7 +54,7 @@ export default function Home() {
                 className="reveal-up mt-5 max-w-xl text-[15px] font-medium leading-relaxed text-[#111111]"
                 style={revealDelay(200)}
               >
-                Since 2020, Capra Security has built a nationwide network of vetted security professionals across Canada. We deliver tailored protection for corporate, retail, industrial, and event operations.
+                With over 20 years of combined management experience, Capra Security has built a nationwide network of vetted security professionals across Canada. We deliver tailored protection for corporate, retail, industrial, and event operations.
               </p>
 
               <div className="mt-8 flex flex-wrap gap-3">
@@ -140,38 +139,13 @@ export default function Home() {
             ))}
           </div>
 
-          <div className="mt-4 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-            {services.slice(4).map((service, idx) => (
-              <ScrollReveal key={service.slug} delayMs={200 + idx * 120} variant="scale">
-                <Link href={`/services/${service.slug}`} className="group block h-full">
-                  <article className="service-bento relative h-[200px] overflow-hidden rounded-2xl">
-                    {/* eslint-disable-next-line @next/next/no-img-element */}
-                    <img src={service.image} alt={service.title} className="absolute inset-0 h-full w-full object-cover blur-[0.8px] transition-all duration-700 group-hover:scale-110 group-hover:blur-0" />
-                    <div className="service-overlay absolute inset-0 bg-gradient-to-t from-black/90 via-black/60 to-black/30" />
-                    <div className="service-shine" />
-                    <div className="service-border-glow" />
-                    <div className="service-content relative flex h-full flex-col justify-end p-5">
-                      <h3 className="text-base font-bold text-white transition-transform duration-300 group-hover:translate-x-1">{service.title}</h3>
-                      <p className="mt-1.5 text-[13px] font-medium leading-relaxed text-white/85 line-clamp-2 transition-opacity duration-300 group-hover:text-white">{service.shortDesc}</p>
-                      <span className="mt-2.5 inline-flex items-center gap-1 text-[12px] font-semibold text-white/70 transition-all duration-300 group-hover:gap-2.5 group-hover:text-[#8b6914]">
-                        Learn more
-                        <svg viewBox="0 0 20 20" className="h-3 w-3 transition-transform duration-300 group-hover:translate-x-1" fill="currentColor">
-                          <path fillRule="evenodd" d="M3 10a.75.75 0 01.75-.75h10.638L10.23 5.29a.75.75 0 111.04-1.08l5.5 5.25a.75.75 0 010 1.08l-5.5 5.25a.75.75 0 11-1.04-1.08l4.158-3.96H3.75A.75.75 0 013 10z" clipRule="evenodd" />
-                        </svg>
-                      </span>
-                    </div>
-                  </article>
-                </Link>
-              </ScrollReveal>
-            ))}
-          </div>
         </div>
       </section>
 
       {/* ── Stats Counter Strip ── */}
       <section className="bg-[#0a1220] py-14 relative z-10">
         <div className="mx-auto max-w-5xl px-5 lg:px-8">
-          <div className="grid grid-cols-2 gap-8 md:grid-cols-4">
+          <div className="grid grid-cols-3 gap-8">
             {stats.map((stat, idx) => (
               <AnimatedCounter
                 key={stat.label}
@@ -222,7 +196,7 @@ export default function Home() {
                     </span>
                   </h2>
                   <p className="mt-5 max-w-md text-base leading-relaxed text-[var(--text-secondary)]">
-                    Established in 2020, Capra Security has built a nationwide network of highly vetted security
+                    With over 20 years of combined management experience, Capra Security has built a nationwide network of highly vetted security
                     professionals. We examine performance indicators through comprehensive vetting processes and
                     deliver personalized recommendations for every client.
                   </p>
@@ -288,7 +262,7 @@ export default function Home() {
           </ScrollReveal>
           <ScrollReveal delayMs={150} variant="fade">
             <p className="mx-auto mt-4 max-w-2xl text-base leading-relaxed text-white/50">
-              Whether you need a single fire watch guard or a full-scale security operation, Capra Security
+              Whether you need a single concierge or a full-scale security operation, Capra Security
               has the experience, personnel, and infrastructure to protect what matters most.
             </p>
           </ScrollReveal>

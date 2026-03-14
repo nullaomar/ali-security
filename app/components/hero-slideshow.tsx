@@ -12,8 +12,8 @@ const slides = [
     alt: "Security guards on duty",
   },
   {
-    src: "/firefighter.jpg",
-    alt: "Fire watch security guard",
+    src: "https://images.unsplash.com/photo-1582139329536-e7284fece509?w=1600&q=80&auto=format",
+    alt: "Professional security patrol",
   },
   {
     src: "/loss-prevention.jpg",

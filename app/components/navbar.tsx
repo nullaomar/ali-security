@@ -14,13 +14,14 @@ const navLinks = [
 ];
 
 const serviceLinks = [
-  { label: "Fire Watch Security Guard", href: "/services/fire-watch" },
+  { label: "REIT Security", href: "/services/reit-security" },
+  { label: "Property Management Security", href: "/services/property-management" },
+  { label: "Commercial & Industrial Logistics", href: "/services/commercial-industrial-logistics" },
   { label: "Mobile Security Guard", href: "/services/mobile-security" },
   { label: "Loss Prevention", href: "/services/loss-prevention" },
   { label: "Event Security", href: "/services/event-security" },
-  { label: "Security Operations & Logistics", href: "/services/operations-logistics" },
-  { label: "Industrial Security Services", href: "/services/industrial-security" },
   { label: "Onsite Construction Security", href: "/services/construction-security" },
+  { label: "Fire Watch Security Guard", href: "/services/fire-watch" },
 ];
 
 export default function Navbar() {
