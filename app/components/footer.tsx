@@ -2,13 +2,14 @@ import Link from "next/link";
 import Image from "next/image";
 
 const serviceLinks = [
-  { label: "Fire Watch Security Guard", href: "/services/fire-watch" },
+  { label: "REIT Security", href: "/services/reit-security" },
+  { label: "Property Management Security", href: "/services/property-management" },
+  { label: "Commercial & Industrial Logistics", href: "/services/commercial-industrial-logistics" },
   { label: "Mobile Security Guard", href: "/services/mobile-security" },
   { label: "Loss Prevention", href: "/services/loss-prevention" },
   { label: "Event Security", href: "/services/event-security" },
-  { label: "Security Operations & Logistics", href: "/services/operations-logistics" },
-  { label: "Industrial Security Services", href: "/services/industrial-security" },
   { label: "Onsite Construction Security", href: "/services/construction-security" },
+  { label: "Fire Watch Security Guard", href: "/services/fire-watch" },
 ];
 
 const companyLinks = [
@@ -28,10 +29,9 @@ export default function Footer() {
           {/* Brand */}
           <div className="lg:col-span-1">
             <div className="flex items-center gap-2">
-              <Image src="/logo.jpg" alt="Capra Security" width={44} height={44} className="h-11 w-11 rounded-lg object-contain brightness-0 invert" />
+              <Image src="/logoo.jpg" alt="Capra Security" width={44} height={44} className="h-11 w-11 rounded-lg object-contain" />
               <div className="flex flex-col">
-                <span className="text-[15px] font-semibold leading-tight text-white">Capra Security</span>
-                <span className="text-[10px] font-medium uppercase tracking-[0.08em] text-white/40">Security Services</span>
+                <span className="text-[15px] font-semibold leading-tight text-white">Capra Security Services Inc.</span>
               </div>
             </div>
             <p className="mt-4 max-w-xs text-sm leading-relaxed text-white/55">
