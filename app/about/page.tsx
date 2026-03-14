@@ -123,8 +123,8 @@ export default function AboutPage() {
                 {/* Main large image - floating */}
                 <div className="collage-img-1 absolute left-0 top-0 h-[70%] w-[65%] cursor-pointer overflow-hidden rounded-2xl shadow-2xl transition-shadow duration-500 hover:shadow-[0_20px_60px_rgba(139,105,20,0.15)]">
                   <img
-                    src="https://images.unsplash.com/photo-1521791136064-7986c2920216?w=600&q=80&auto=format"
-                    alt="Security team"
+                    src="/capra-team.jpg"
+                    alt="Capra Security team"
                     className="h-full w-full object-cover"
                   />
                   <div className="pointer-events-none absolute inset-0 rounded-2xl ring-1 ring-inset ring-white/[0.08] transition-all duration-500 hover:ring-[#8b6914]/20" />
@@ -132,8 +132,8 @@ export default function AboutPage() {
                 {/* Secondary image - floating offset */}
                 <div className="collage-img-2 absolute bottom-0 right-0 h-[60%] w-[55%] cursor-pointer overflow-hidden rounded-2xl shadow-2xl transition-shadow duration-500 hover:shadow-[0_20px_60px_rgba(139,105,20,0.15)]">
                   <img
-                    src="https://images.unsplash.com/photo-1497366216548-37526070297c?w=600&q=80&auto=format"
-                    alt="Corporate office"
+                    src="/capra-office.jpg"
+                    alt="Capra Security office"
                     className="h-full w-full object-cover"
                   />
                   <div className="pointer-events-none absolute inset-0 rounded-2xl ring-1 ring-inset ring-white/[0.08]" />

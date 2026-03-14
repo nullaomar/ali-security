@@ -80,7 +80,7 @@ export const services: ServiceData[] = [
       "Digital reporting after each patrol checkpoint",
     ],
     iconPath: "M1 3h15a2 2 0 012 2v11H1V5a2 2 0 012-2z M16 8h4l3 3v5h-7V8z M5.5 18.5a2.5 2.5 0 100-5 2.5 2.5 0 000 5z M18.5 18.5a2.5 2.5 0 100-5 2.5 2.5 0 000 5z",
-    image: "/mobile-patrol-security.jpg",
+    image: "/mobile-patrol-new.jpg",
   },
   // ── Additional services (dropdown / services page only) ──
   {
