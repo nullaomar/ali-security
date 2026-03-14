@@ -42,14 +42,14 @@ const whyUs = [
 ];
 
 const featuredClients = [
-  { name: "Morguard", industry: "REIT & Property Management" },
-  { name: "GWL Realty", industry: "Real Estate Investment" },
-  { name: "Bentall Green Oak", industry: "Real Estate Services" },
-  { name: "CBRE", industry: "Commercial Real Estate" },
-  { name: "Colliers", industry: "Property Management" },
-  { name: "Cadillac Fairview", industry: "Real Estate Investment" },
-  { name: "Oxford Properties", industry: "Real Estate & Investment" },
-  { name: "Dream Unlimited", industry: "Development & Management" },
+  { name: "Hilton Hotels & Resorts", industry: "Hospitality", logo: "/clients/hilton.jpg" },
+  { name: "Cineplex", industry: "Entertainment", logo: "/clients/cineplex.png" },
+  { name: "Hampton by Hilton", industry: "Hospitality", logo: "/clients/hampton.png" },
+  { name: "La Primavera Event Space", industry: "Events & Venues", logo: "/clients/la-primavera.webp" },
+  { name: "Hyatt", industry: "Hospitality", logo: "/clients/hyatt.jpg" },
+{ name: "Cadillac Fairview", industry: "Real Estate Investment", logo: "/clients/cadillac-fairview.jpg" },
+  { name: "Oxford Properties", industry: "Real Estate & Investment", logo: "" },
+  { name: "Dream Unlimited", industry: "Development & Management", logo: "" },
 ];
 
 export default function AboutPage() {
@@ -82,12 +82,20 @@ export default function AboutPage() {
                       key={`${setIdx}-${client.name}`}
                       className="group mx-8 flex shrink-0 items-center gap-3 md:mx-12"
                     >
-                      {/* Logo-style icon */}
-                      <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg border border-white/[0.06] bg-white/[0.03] transition-all duration-400 group-hover:border-[#8b6914]/25 group-hover:bg-[#8b6914]/10">
-                        <span className="text-[15px] font-bold text-white/50 transition-colors duration-400 group-hover:text-[#a08030]">
-                          {client.name.charAt(0)}
-                        </span>
-                      </div>
+                      {/* Logo or initial */}
+                      {client.logo ? (
+                        <img
+                          src={client.logo}
+                          alt={client.name}
+                          className="h-10 w-10 shrink-0 rounded-lg object-cover"
+                        />
+                      ) : (
+                        <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg border border-white/[0.06] bg-white/[0.03] transition-all duration-400 group-hover:border-[#8b6914]/25 group-hover:bg-[#8b6914]/10">
+                          <span className="text-[15px] font-bold text-white/50 transition-colors duration-400 group-hover:text-[#a08030]">
+                            {client.name.charAt(0)}
+                          </span>
+                        </div>
+                      )}
                       <div className="flex flex-col">
                         <span className="whitespace-nowrap text-[14px] font-semibold text-white/40 transition-colors duration-400 group-hover:text-white/80">
                           {client.name}

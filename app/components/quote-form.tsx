@@ -3,27 +3,52 @@
 import { useState, type FormEvent } from "react";
 
 const serviceOptions = [
-  "Fire Watch Security Guard",
+  "REIT Security",
+  "Property Management Security",
+  "Commercial & Industrial Logistics",
   "Mobile Security Guard",
   "Loss Prevention",
   "Event Security",
-  "Security Operations & Logistics",
-  "Industrial Security Services",
   "Onsite Construction Security",
+  "Fire Watch Security Guard",
   "Other",
 ];
 
 export default function QuoteForm() {
   const [submitted, setSubmitted] = useState(false);
   const [submitting, setSubmitting] = useState(false);
+  const [error, setError] = useState("");
 
-  function handleSubmit(e: FormEvent<HTMLFormElement>) {
+  async function handleSubmit(e: FormEvent<HTMLFormElement>) {
     e.preventDefault();
     setSubmitting(true);
-    setTimeout(() => {
-      setSubmitting(false);
+    setError("");
+
+    const form = e.currentTarget;
+    const data = {
+      name: (form.elements.namedItem("name") as HTMLInputElement).value,
+      company: (form.elements.namedItem("company") as HTMLInputElement).value,
+      email: (form.elements.namedItem("email") as HTMLInputElement).value,
+      phone: (form.elements.namedItem("phone") as HTMLInputElement).value,
+      service: (form.elements.namedItem("service") as HTMLSelectElement).value,
+      location: (form.elements.namedItem("location") as HTMLInputElement).value,
+      details: (form.elements.namedItem("details") as HTMLTextAreaElement).value,
+    };
+
+    try {
+      const res = await fetch("/api/quote", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(data),
+      });
+
+      if (!res.ok) throw new Error("Failed to submit");
       setSubmitted(true);
-    }, 1200);
+    } catch {
+      setError("Something went wrong. Please try again or call us at 416-953-0539.");
+    } finally {
+      setSubmitting(false);
+    }
   }
 
   if (submitted) {
@@ -47,18 +72,24 @@ export default function QuoteForm() {
 
   return (
     <form onSubmit={handleSubmit} className="space-y-5">
+      {error && (
+        <div className="rounded-xl border border-red-200 bg-red-50 px-4 py-3 text-sm text-red-600">
+          {error}
+        </div>
+      )}
+
       <div className="grid gap-5 sm:grid-cols-2">
         <div>
           <label htmlFor="name" className="mb-1.5 block text-[13px] font-medium text-[var(--text-secondary)]">
             Full Name
           </label>
-          <input id="name" type="text" required placeholder="Your name" className={inputClass} />
+          <input id="name" name="name" type="text" required placeholder="Your name" className={inputClass} />
         </div>
         <div>
           <label htmlFor="company" className="mb-1.5 block text-[13px] font-medium text-[var(--text-secondary)]">
             Company / Organization
           </label>
-          <input id="company" type="text" placeholder="Optional" className={inputClass} />
+          <input id="company" name="company" type="text" placeholder="Optional" className={inputClass} />
         </div>
       </div>
 
@@ -67,13 +98,13 @@ export default function QuoteForm() {
           <label htmlFor="email" className="mb-1.5 block text-[13px] font-medium text-[var(--text-secondary)]">
             Email
           </label>
-          <input id="email" type="email" required placeholder="you@company.com" className={inputClass} />
+          <input id="email" name="email" type="email" required placeholder="you@company.com" className={inputClass} />
         </div>
         <div>
           <label htmlFor="phone" className="mb-1.5 block text-[13px] font-medium text-[var(--text-secondary)]">
             Phone
           </label>
-          <input id="phone" type="tel" required placeholder="(519) 000-0000" className={inputClass} />
+          <input id="phone" name="phone" type="tel" required placeholder="(416) 000-0000" className={inputClass} />
         </div>
       </div>
 
@@ -81,7 +112,7 @@ export default function QuoteForm() {
         <label htmlFor="service" className="mb-1.5 block text-[13px] font-medium text-[var(--text-secondary)]">
           Service Required
         </label>
-        <select id="service" required className={inputClass} defaultValue="">
+        <select id="service" name="service" required className={inputClass} defaultValue="">
           <option value="" disabled>Select a service</option>
           {serviceOptions.map((opt) => (
             <option key={opt} value={opt}>{opt}</option>
@@ -93,7 +124,7 @@ export default function QuoteForm() {
         <label htmlFor="location" className="mb-1.5 block text-[13px] font-medium text-[var(--text-secondary)]">
           Location / Site Address
         </label>
-        <input id="location" type="text" placeholder="City, Province or full address" className={inputClass} />
+        <input id="location" name="location" type="text" placeholder="City, Province or full address" className={inputClass} />
       </div>
 
       <div>
@@ -102,6 +133,7 @@ export default function QuoteForm() {
         </label>
         <textarea
           id="details"
+          name="details"
           rows={4}
           placeholder="Describe your security needs, schedule, number of guards, etc."
           className={inputClass}

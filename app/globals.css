@@ -754,7 +754,7 @@ h1, h2, h3 {
 }
 
 .client-banner-track {
-  animation: client-scroll 35s linear infinite;
+  animation: client-scroll 18s linear infinite;
 }
 
 .client-banner:hover .client-banner-track {
