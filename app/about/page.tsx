@@ -224,34 +224,31 @@ export default function AboutPage() {
             </div>
           </ScrollReveal>
 
-          <div className="mt-12 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+          <div className="mt-12 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
             {whyUs.map((item, i) => (
               <ScrollReveal
                 key={item.title}
                 delayMs={120 + i * 80}
-                variant="scale"
+                variant="up"
               >
-                <div className="service-other-card group relative h-72 overflow-hidden rounded-2xl">
-                  {/* BG image with ken-burns */}
+                <div className="group relative h-80 cursor-pointer overflow-hidden rounded-2xl">
+                  {/* BG image - darkened by default, reveals on hover */}
+                  {/* eslint-disable-next-line @next/next/no-img-element */}
                   <img
                     src={item.image}
                     alt=""
-                    className={`why-card-img absolute inset-0 h-full w-full object-cover transition-transform duration-700 group-hover:scale-110 ${i > 0 ? `delay-${i}` : ""}`}
+                    className="absolute inset-0 h-full w-full object-cover opacity-40 transition-all duration-700 ease-out group-hover:opacity-70 group-hover:scale-110"
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-[#080f1a] via-[#080f1a]/80 to-[#080f1a]/30" />
+                  {/* Gradient overlay */}
+                  <div className="absolute inset-0 bg-gradient-to-t from-[#080f1a] via-[#080f1a]/70 to-transparent transition-opacity duration-500 group-hover:via-[#080f1a]/50" />
 
-                  {/* Hover border glow */}
-                  <div className="pointer-events-none absolute inset-0 rounded-2xl border border-transparent transition-colors duration-500 group-hover:border-[#8b6914]/30" />
-
-                  {/* Shine sweep */}
-                  <div className="feature-shine pointer-events-none absolute inset-0 z-[1]" />
-
-                  {/* Content at bottom */}
-                  <div className="relative flex h-full flex-col justify-end p-5">
-                    <div className="mb-3 flex h-9 w-9 items-center justify-center rounded-lg bg-[#8b6914]/20 backdrop-blur-sm transition-colors duration-300 group-hover:bg-[#8b6914]/30">
+                  {/* Content - slides up on hover */}
+                  <div className="relative flex h-full flex-col justify-end p-5 transition-transform duration-500 ease-out group-hover:-translate-y-2">
+                    {/* Icon */}
+                    <div className="mb-3 flex h-10 w-10 items-center justify-center rounded-xl bg-[#8b6914]/20 backdrop-blur-sm transition-all duration-500 group-hover:bg-[#8b6914]/30 group-hover:scale-110">
                       <svg
                         viewBox="0 0 24 24"
-                        className="h-4 w-4 text-[#a08030]"
+                        className="h-5 w-5 text-[#a08030]"
                         fill="none"
                         stroke="currentColor"
                         strokeWidth="1.5"
@@ -263,10 +260,10 @@ export default function AboutPage() {
                         />
                       </svg>
                     </div>
-                    <h3 className="text-[15px] font-bold text-white transition-transform duration-300 group-hover:translate-x-1">
+                    <h3 className="text-[15px] font-bold text-white transition-colors duration-300 group-hover:text-[#d4a017]">
                       {item.title}
                     </h3>
-                    <p className="mt-1.5 text-[12px] leading-relaxed text-white/40 transition-colors duration-300 group-hover:text-white/60">
+                    <p className="mt-1.5 max-h-0 overflow-hidden text-[12px] leading-relaxed text-white/50 opacity-0 transition-all duration-500 ease-out group-hover:mt-2 group-hover:max-h-20 group-hover:opacity-100">
                       {item.desc}
                     </p>
                   </div>
