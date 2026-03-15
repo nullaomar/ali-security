@@ -6,6 +6,7 @@ import RotatingWords from "./components/rotating-words";
 import TestimonialCards from "./components/testimonial-cards";
 import AnimatedCounter from "./components/animated-counter";
 import ScrollJourney from "./components/scroll-journey";
+import ClientBanner from "./components/client-banner";
 import { services } from "./lib/services-data";
 
 const stats = [
@@ -87,6 +88,9 @@ export default function Home() {
           </div>
         </div>
       </section>
+
+      {/* ── Trusted By ── */}
+      <ClientBanner />
 
       {/* ── Services preview ── */}
       <section className="bg-[#0f1b2d] pt-16 pb-14 section-divider-down" style={{ background: "#0f1b2d" }}>
