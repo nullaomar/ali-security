@@ -55,7 +55,7 @@ export default function Home() {
                 className="reveal-up mt-5 max-w-xl text-[15px] font-medium leading-relaxed text-[#111111]"
                 style={revealDelay(200)}
               >
-                With over 20 years of combined management experience, Capra Security has built a nationwide network of vetted security professionals across Canada. We deliver tailored protection for corporate, retail, industrial, and event operations.
+                With over 20 years of combined management experience, Capra Security has built a nationwide network of vetted security professionals across Canada. We deliver a proven process for investment trusts, property management, and industrial and retail assets.
               </p>
 
               <div className="mt-8 flex flex-wrap gap-3">

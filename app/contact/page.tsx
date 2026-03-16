@@ -91,6 +91,16 @@ export default function ContactPage() {
       {/* ── LOCATIONS ── */}
       <section className="border-t border-white/[0.04] bg-[#0f1b2d]">
         <div className="mx-auto max-w-7xl px-5 py-20 lg:px-8 lg:py-28">
+          <ScrollReveal delayMs={80}>
+            <div className="mb-10 text-center">
+              <span className="text-[13px] font-mono font-bold uppercase tracking-wider text-[#8b6914]/50">
+                Our Locations
+              </span>
+              <h2 className="mt-3 text-2xl font-semibold text-white md:text-3xl">
+                Come Visit Us at One of Our <span className="text-[#8b6914]">Offices</span>
+              </h2>
+            </div>
+          </ScrollReveal>
           <div className="grid gap-12 lg:grid-cols-2">
             {/* Mississauga */}
             <ScrollReveal delayMs={80} variant="left">
@@ -154,7 +164,7 @@ export default function ContactPage() {
                 <div className="mt-8 space-y-3">
                   {[
                     { day: "Monday - Friday", hours: "8:00 AM - 6:00 PM" },
-                    { day: "Saturday", hours: "9:00 AM - 2:00 PM" },
+                    { day: "Saturday", hours: "9:00 AM - 4:00 PM" },
                     { day: "Sunday", hours: "Closed (Emergency line active)" },
                   ].map((item) => (
                     <div

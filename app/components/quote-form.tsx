@@ -6,7 +6,7 @@ const serviceOptions = [
   "REIT Security",
   "Property Management Security",
   "Commercial & Industrial Logistics",
-  "Mobile Security Guard",
+  "Mobile Patrol",
   "Loss Prevention",
   "Event Security",
   "Onsite Construction Security",
