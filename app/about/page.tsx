@@ -141,8 +141,8 @@ export default function AboutPage() {
                 {/* Small accent image - floating */}
                 <div className="collage-img-3 absolute right-[10%] top-[5%] h-[30%] w-[30%] cursor-pointer overflow-hidden rounded-xl shadow-xl transition-shadow duration-500 hover:shadow-[0_16px_40px_rgba(139,105,20,0.15)]">
                   <img
-                    src="https://images.unsplash.com/photo-1573164713714-d95e436ab8d6?w=400&q=80&auto=format"
-                    alt="Monitoring"
+                    src="/property-management.jpg"
+                    alt="Property management security"
                     className="h-full w-full object-cover"
                   />
                   <div className="pointer-events-none absolute inset-0 rounded-xl ring-1 ring-inset ring-white/[0.08]" />
