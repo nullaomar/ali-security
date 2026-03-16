@@ -44,7 +44,7 @@ export const services: ServiceData[] = [
       "Detailed shift reports for property managers",
     ],
     iconPath: "M3 21h18 M9 8h1 M9 12h1 M9 16h1 M14 8h1 M14 12h1 M14 16h1 M5 21V5a2 2 0 012-2h10a2 2 0 012 2v16",
-    image: "https://images.unsplash.com/photo-1560518883-ce09059eeffa?w=800&q=80&auto=format",
+    image: "/property-management.jpg",
   },
   {
     title: "Commercial & Industrial Logistics",
@@ -65,12 +65,12 @@ export const services: ServiceData[] = [
     image: "https://images.unsplash.com/photo-1513828583688-c52646db42da?w=800&q=80&auto=format",
   },
   {
-    title: "Mobile Security Guard",
+    title: "Mobile Patrol",
     slug: "mobile-security",
     shortDesc:
       "Marked vehicle patrols with randomized routes providing a visible deterrent and rapid on-site response capabilities.",
     longDesc:
-      "Our Mobile Security Guard service provides marked vehicle patrols with randomized routes, creating a visible deterrent across your properties. GPS-tracked guards deliver real-time reporting and rapid on-site response. Whether you manage multiple locations, large campuses, or remote sites, our mobile patrol teams cover more ground efficiently while maintaining the highest standards of vigilance and professionalism.",
+      "Our Mobile Patrol service provides marked vehicle patrols with randomized routes, creating a visible deterrent across your properties. GPS-tracked guards deliver real-time reporting and rapid on-site response. Whether you manage multiple locations, large campuses, or remote sites, our mobile patrol teams cover more ground efficiently while maintaining the highest standards of vigilance and professionalism.",
     features: [
       "Marked patrol vehicles for maximum deterrence",
       "GPS-tracked routes with real-time monitoring",

@@ -17,7 +17,7 @@ const serviceLinks = [
   { label: "REIT Security", href: "/services/reit-security" },
   { label: "Property Management Security", href: "/services/property-management" },
   { label: "Commercial & Industrial Logistics", href: "/services/commercial-industrial-logistics" },
-  { label: "Mobile Security Guard", href: "/services/mobile-security" },
+  { label: "Mobile Patrol", href: "/services/mobile-security" },
   { label: "Loss Prevention", href: "/services/loss-prevention" },
   { label: "Event Security", href: "/services/event-security" },
   { label: "Onsite Construction Security", href: "/services/construction-security" },

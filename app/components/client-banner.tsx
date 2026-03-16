@@ -6,8 +6,8 @@ const clients = [
   { name: "Hampton by Hilton", logo: "/clients/hampton.png" },
   { name: "La Primavera Event Space", logo: "/clients/la-primavera.webp" },
   { name: "Hyatt", logo: "/clients/hyatt.jpg" },
-  { name: "Cadillac Fairview", logo: "/clients/cadillac-fairview.jpg" },
-  { name: "Oxford Properties", logo: "" },
+  { name: "Precision Final Mile", logo: "/clients/precision-final-mile.jpeg" },
+  { name: "Bridge Connect", logo: "/clients/bridge-connect.png" },
   { name: "Dream Unlimited", logo: "" },
 ];
 
