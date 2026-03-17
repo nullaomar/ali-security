@@ -49,7 +49,6 @@ const featuredClients = [
   { name: "Hyatt", industry: "Hospitality", logo: "/clients/hyatt.jpg" },
 { name: "Cadillac Fairview", industry: "Real Estate Investment", logo: "/clients/cadillac-fairview.jpg" },
   { name: "Oxford Properties", industry: "Real Estate & Investment", logo: "" },
-  { name: "Dream Unlimited", industry: "Development & Management", logo: "" },
 ];
 
 export default function AboutPage() {

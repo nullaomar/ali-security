@@ -8,7 +8,6 @@ const clients = [
   { name: "Hyatt", logo: "/clients/hyatt.jpg" },
   { name: "Precision Final Mile", logo: "/clients/precision-final-mile.jpeg" },
   { name: "Bridge Connect", logo: "/clients/bridge-connect.png" },
-  { name: "Dream Unlimited", logo: "" },
 ];
 
 export default function ClientBanner() {

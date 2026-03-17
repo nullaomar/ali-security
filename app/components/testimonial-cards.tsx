@@ -4,31 +4,24 @@ import { useEffect, useState } from "react";
 
 const testimonials = [
   {
-    name: "David Chen",
-    role: "Facility Manager",
-    company: "Meridian Properties",
-    text: "Capra Security transformed our building security overnight. Their guards are professional, punctual, and genuinely care about our tenants' safety.",
+    name: "ASL Precision",
+    role: "Operations Manager, Windsor, ON",
+    company: "ASL Precision Parcel & Package Deliveries",
+    text: "We run a high-volume terminal and vendor management takes up enough of my time. Capra runs itself. Guard is there, reports come in, nothing falls through. That\u2019s what I need from a security company.",
     rating: 5,
   },
   {
-    name: "Sarah Thompson",
-    role: "Operations Director",
-    company: "NovaTech Industries",
-    text: "We switched to Capra for our warehouse security and haven't looked back. Their real-time reporting and GPS tracking gives us total peace of mind.",
+    name: "Nawab Freight",
+    role: "President, Windsor, ON",
+    company: "Nawab Freight Lines Ltd.",
+    text: "Straightforward to work with and they actually show up. For a yard operation like ours that is not a small thing. No complaints.",
     rating: 5,
   },
   {
-    name: "Marcus Rivera",
-    role: "Event Coordinator",
-    company: "Lakeshore Events",
-    text: "Every event we run, Capra's team is there early, prepared, and handles crowds with professionalism. They've become our go-to security partner.",
-    rating: 5,
-  },
-  {
-    name: "Jennifer Walsh",
-    role: "Regional Manager",
-    company: "Apex Retail Group",
-    text: "Loss prevention was a major issue for us. Since partnering with Capra, shrinkage is down 40%. Their guards are sharp and well-trained.",
+    name: "Bridge Connect",
+    role: "Safety and Compliance Manager, Brampton, ON",
+    company: "Bridge Connect Inc.",
+    text: "Capra got set up at our terminal quickly and without a lot of hand-holding. The guard knows the operation, access is controlled, and the reporting is consistent. Does what it is supposed to do.",
     rating: 5,
   },
 ];
@@ -99,8 +92,8 @@ export default function TestimonialCards() {
                 {t.name.split(" ").map(n => n[0]).join("")}
               </div>
               <div>
-                <p className="text-[13px] font-semibold text-[var(--text-primary)]">{t.name}</p>
-                <p className="text-[11px] text-[var(--text-quaternary)]">{t.role}, {t.company}</p>
+                <p className="text-[13px] font-semibold text-[var(--text-primary)]">{t.company}</p>
+                <p className="text-[11px] text-[var(--text-quaternary)]">{t.role}</p>
               </div>
             </div>
           </div>
@@ -129,8 +122,8 @@ export default function TestimonialCards() {
             {testimonials[next].name.split(" ").map(n => n[0]).join("")}
           </div>
           <div>
-            <p className="text-[12px] font-semibold text-[var(--text-primary)]">{testimonials[next].name}</p>
-            <p className="text-[10px] text-[var(--text-quaternary)]">{testimonials[next].company}</p>
+            <p className="text-[12px] font-semibold text-[var(--text-primary)]">{testimonials[next].company}</p>
+            <p className="text-[10px] text-[var(--text-quaternary)]">{testimonials[next].role}</p>
           </div>
         </div>
       </div>
