@@ -17,6 +17,7 @@ const nextConfig: NextConfig = {
       { source: "/about-us.html", destination: "/about", permanent: true },
       { source: "/about.html", destination: "/about", permanent: true },
       { source: "/security-guards-construction.html", destination: "/services", permanent: true },
+      { source: "/security-guards-construction-sites.html", destination: "/services", permanent: true },
       { source: "/get-a-quote.html", destination: "/quote", permanent: true },
       { source: "/index.html", destination: "/", permanent: true },
       { source: "/work-with-us.html", destination: "/work-with-us", permanent: true },
