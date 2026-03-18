@@ -47,8 +47,8 @@ const featuredClients = [
   { name: "Hampton by Hilton", industry: "Hospitality", logo: "/clients/hampton.png" },
   { name: "La Primavera Event Space", industry: "Events & Venues", logo: "/clients/la-primavera.webp" },
   { name: "Hyatt", industry: "Hospitality", logo: "/clients/hyatt.jpg" },
-{ name: "Cadillac Fairview", industry: "Real Estate Investment", logo: "/clients/cadillac-fairview.jpg" },
-  { name: "Oxford Properties", industry: "Real Estate & Investment", logo: "" },
+  { name: "Precision Final Mile", industry: "Logistics", logo: "/clients/precision-final-mile.jpeg" },
+  { name: "Bridge Connect", industry: "Transportation", logo: "/clients/bridge-connect.png" },
 ];
 
 export default function AboutPage() {
