@@ -51,14 +51,14 @@ export const metadata: Metadata = {
     title: "Capra Security | Security You Can Trust",
     description:
       "Emergency Security Management providing REIT Security, Property Management, Commercial & Industrial Logistics, Mobile Patrol, and more nationwide.",
-    images: [{ url: "/logoo.jpg", width: 120, height: 120, alt: "Capra Security Logo" }],
+    images: [{ url: "/opengraph-image", width: 1200, height: 630, alt: "Capra Security Logo" }],
   },
   twitter: {
-    card: "summary",
+    card: "summary_large_image",
     title: "Capra Security | Security You Can Trust",
     description:
       "Emergency Security Management providing REIT Security, Property Management, Mobile Patrol, and more nationwide.",
-    images: ["/logoo.jpg"],
+    images: ["/opengraph-image"],
   },
   robots: {
     index: true,
