@@ -124,6 +124,7 @@ export default function Footer() {
             <a href="/capra-terms-and-conditions.pdf" target="_blank" rel="noopener noreferrer" className="transition hover:text-white/70">Terms &amp; Conditions</a>
           </div>
           <p>&copy; {new Date().getFullYear()} Capra Security. All rights reserved. Licensed &amp; Insured.</p>
+          <p className="text-white/25">Website created by Nulla &amp; Chaudhry Media</p>
         </div>
       </div>
     </footer>
